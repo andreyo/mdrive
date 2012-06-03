@@ -1,0 +1,48 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<wicket:panel>
+    <span wicket:id="feedback"/>
+
+    <form wicket:id="form" class="signin-box">
+        <table width="60%">
+            <tr>
+                <td>
+                    <div wicket:id="fromAddress">from Address</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div wicket:id="toAddress">to Address</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div wicket:id="toggle2ndAddressLink">toggle parameters link</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div wicket:id="secondAddress">second to Address</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div wicket:id="toggleParametersLink">toggle parameters link</div>
+                </td>
+            </tr>
+            <tr wicket:id="parametersListView">
+                <td>
+                    <div wicket:id="editor"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td  align="right">
+                    <input type="submit" wicket:id="submitButton" value="Submit"
+                           wicket:message="value:submitButtonValue,title:submitButtonTitle"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</wicket:panel>
+</html>

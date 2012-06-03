@@ -1,0 +1,74 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+    <properties> <!-- Configure table name -->
+        out_file_name=ymap_coordinates
+        STREET_IDS_LIST=725,1109,1377,1797,3131,3641,4335,5011,5176,6122
+    </properties>
+    <connection id="in" driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://77.120.121.242:3306/mdrive?characterEncoding=UTF-8" user="mdrive" password="mdrive">
+    </connection>
+    <connection id="out" driver="scriptella.driver.text.Driver" url="${out_file_name}_${etl.date.now('MM_dd_yyyy')}.xml"/>
+    <connection id="java" driver="janino"/>
+
+    <!-- File Header -->
+    <script connection-id="out"><![CDATA[
+    <?xml version="1.0" encoding="utf-8"?>
+    <ymaps:ymaps xmlns:ymaps="http://maps.yandex.ru/ymaps/1.x"
+           xmlns:repr="http://maps.yandex.ru/representation/1.x"
+           xmlns:gml="http://www.opengis.net/gml"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maps.yandex.ru/schemas/ymaps/1.x/ymaps.xsd">
+        <ymaps:GeoObjectCollection>
+            <gml:featureMembers>]]>
+        </script>
+
+    <!-- Iterate Streets-->
+    <query connection-id="java">
+       <![CDATA[
+            String street_ids_list = "" + (String)get("STREET_IDS_LIST");
+            street_ids_list = street_ids_list.replaceAll(" ", "");
+            String[] street_ids_array = street_ids_list.split(",");
+            //strange, bu java5 "for" doesn't work
+            for (int i=0; i< street_ids_array.length; i++) {
+                set("STREET_ID", street_ids_array[i]);
+                next();
+            }
+        ]]>
+
+        <!-- Street Header-->
+        <query connection-id="in">
+            select nm.value_uk as STREET_NAME, go.ID from GEO_OBJECT go, I18NAME nm where nm.id = go.i18name_id and go.id = $STREET_ID;
+            <script connection-id="out"><![CDATA[
+                    <ymaps:GeoObjectCollection>
+                        <gml:name>$STREET_NAME id=$ID</gml:name>
+                        <gml:featureMembers>]]>
+            </script>
+        </query>
+
+        <query connection-id="in">
+            select nm.value_uk, cr.center_long, cr.center_lat from GEO_OBJECT go, I18NAME nm, COORDINATES cr where nm.id = go.i18name_id  and cr.id = go.coordinates_id  and go.parent_id = $STREET_ID;
+            <!--using CDATA to escape HTML markup-->
+            <script connection-id="out"><![CDATA[
+                        <ymaps:GeoObject>
+                            <gml:name>$value_uk</gml:name>
+                            <gml:Point>
+                                <gml:pos>$center_lat $center_long</gml:pos>
+                            </gml:Point>
+                        </ymaps:GeoObject>]]>
+            </script>
+        </query>
+
+        <!-- Street Footer -->
+        <script connection-id="out"><![CDATA[
+                </gml:featureMembers>
+                </ymaps:GeoObjectCollection>]]>
+        </script>
+	</query>
+
+    <!-- File Footer -->
+    <script connection-id="out"><![CDATA[
+        </gml:featureMembers>
+    </ymaps:GeoObjectCollection>
+</ymaps:ymaps>]]>
+    </script>
+</etl>

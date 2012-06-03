@@ -1,0 +1,28 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<wicket:head>
+</wicket:head>
+<wicket:panel>
+    <table width="100%">
+        <tr>
+            <td width="20%">
+                <div wicket:id="panelLabel"/>
+            </td>
+            <td width="10%">
+                <a href="#" wicket:id="mapLink" wicket:message="title:map">
+                    <img src="images/map_icon.jpg"/>
+                </a>
+
+                <div wicket:id="mapModalWindow"/>
+            </td>
+            <td width="70%">
+                <div wicket:id="addressAutoCompletePanel" style="width:100%"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div wicket:id="feedback" style="width: 100%;" class="feedback"/>
+            </td>
+        </tr>
+    </table>
+</wicket:panel>
+</html>

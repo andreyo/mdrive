@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="http://maps.yandex.ru/geocoder/1.x" schemaLocation="response.xsd"/>
+    <xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" schemaLocation="response1.xsd"/>
+    <xs:import namespace="http://maps.yandex.ru/ymaps/1.x" schemaLocation="response3.xsd"/>
+    <xs:element name="featureMember" type="gml:featureMemberType" xmlns:gml="http://www.opengis.net/gml"/>
+    <xs:element name="Point" type="gml:PointType" xmlns:gml="http://www.opengis.net/gml"/>
+    <xs:element name="boundedBy" type="gml:boundedByType" xmlns:gml="http://www.opengis.net/gml"/>
+    <xs:element name="metaDataProperty" type="gml:metaDataPropertyType" xmlns:gml="http://www.opengis.net/gml"/>
+    <xs:element name="name" type="xs:string"/>
+    <xs:complexType name="boundedByType">
+        <xs:sequence>
+            <xs:element type="gml:EnvelopeType" name="Envelope" xmlns:gml="http://www.opengis.net/gml"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="featureMemberType">
+        <xs:sequence>
+            <xs:element ref="x:GeoObject" xmlns:x="http://maps.yandex.ru/ymaps/1.x"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="metaDataPropertyType">
+        <xs:sequence>
+            <xs:element ref="x:GeocoderResponseMetaData" minOccurs="0" xmlns:x="http://maps.yandex.ru/geocoder/1.x"/>
+            <xs:element ref="x:GeocoderMetaData" minOccurs="0" xmlns:x="http://maps.yandex.ru/geocoder/1.x"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EnvelopeType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="lowerCorner"/>
+            <xs:element type="xs:string" name="upperCorner"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PointType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="pos"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
