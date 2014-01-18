@@ -1,19 +1,24 @@
 package mdrive.business;
 
-import mdrive.business.bean.CoordinatesBean;
-import mdrive.business.bean.GeoObjectBean;
-import mdrive.business.bean.GeoObjectTypeBean;
-import mdrive.business.bean.I18NameBean;
-import mdrive.business.dao.hibernate.GeoObjectDAO;
-import mdrive.business.dao.hibernate.GeoObjectTypeDAO;
+import mdrive.business.config.JpaTestConfig;
+import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GeoObjectTypeDAO;
+import mdrive.business.model.CoordinatesBean;
+import mdrive.business.model.GeoObjectBean;
+import mdrive.business.model.GeoObjectTypeBean;
+import mdrive.business.model.I18NameBean;
 import mdrive.business.service.DBUnitDataExporter;
+import mdrive.business.service.DBUnitDataLoader;
 import mdrive.business.type.GeoObjectTypeCode;
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -26,7 +31,10 @@ import java.util.List;
  * Date: 7/25/11
  * Time: 4:19 PM
  */
-public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = JpaTestConfig.class)
+public class ExcelToModelConverter {
+    private static final Logger log = Logger.getLogger(ExcelToModelConverter.class);
     private static final String[] TABLE_NAMES = {"I18NAME", "GEO_OBJECT"};
 
     private GeoObjectTypeBean streetGeoObjectTypeBean;
@@ -39,6 +47,9 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
     GeoObjectTypeDAO geoObjectTypeDAO;
 
     @Autowired
+    DBUnitDataLoader dbUnitDataLoader;
+
+    @Autowired
     DBUnitDataExporter dbUnitDataExporter;
 
     @Test
@@ -46,7 +57,7 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
 //    @Rollback(false)
     public void doReadGeoObjectsAndPersist2DB() throws Exception {
         geoObjectDAO.setAutoFlush(false);
-        initTestDataXml("initialdb_dictionary.xml");//insert dictionaries
+        dbUnitDataLoader.initTestDataXml("initialdb_dictionary.xml");//insert dictionaries
 //        readGeoObjectsAndPersist2DB("streets.xls", 0, 2086);
         readGeoObjectsAndPersist2DB("streets.xls", 0, 3);
     }
@@ -68,7 +79,6 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
      */
     private void readGeoObjectsAndPersist2DB(String excelFile, int startPos, int endPos) throws IOException {
         HSSFSheet sheet = getExcelSheet(excelFile);
-
         GeoObjectBean currentStreetGeoObject = null;
         for (int i = startPos; i < endPos; i++) {
             //create street GeoObject
@@ -77,20 +87,20 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
                 throw new RuntimeException("Street name in row " + i + " is empty");
             }
             currentStreetGeoObject = createStreetGeoObject(streetName);
-            logger.debug(streetName);
+            log.debug(streetName);
             //create buildings GeoObjects
             List<GeoObjectBean> buildingGOList = new ArrayList<GeoObjectBean>();
             for (int j = 1; j < sheet.getRow(i).getLastCellNum(); j++) {
                 String buildingName = sheet.getRow(i).getCell(j).toString();
                 GeoObjectBean buildingGO = createBuildingGeoObject(buildingName, currentStreetGeoObject);
                 buildingGOList.add(buildingGO);
-                logger.debug(buildingName);
+                log.debug(buildingName);
             }
             //do not skip strets without buildings
-            if(buildingGOList.size() != 0) {
-                geoObjectDAO.saveOrUpdateAll(buildingGOList);
+            if (buildingGOList.size() != 0) {
+                geoObjectDAO.persist(buildingGOList);
             } else {
-                geoObjectDAO.create(currentStreetGeoObject);
+                geoObjectDAO.persist(currentStreetGeoObject);
             }
 
         }
@@ -105,7 +115,7 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
     private GeoObjectBean createStreetGeoObject(String streetName) {
         GeoObjectBean streetGO = new GeoObjectBean();
         //to select once, instead of every time
-        if (streetGeoObjectTypeBean == null || !geoObjectTypeDAO.sessionContains(streetGeoObjectTypeBean)) {
+        if (streetGeoObjectTypeBean == null || !geoObjectTypeDAO.isManaged(streetGeoObjectTypeBean)) {
             streetGeoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.STREET);
         }
         streetGO.setGeoObjectTypeBean(streetGeoObjectTypeBean);
@@ -129,7 +139,7 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
     private GeoObjectBean createBuildingGeoObject(String buildingName, GeoObjectBean streetGeoObject) {
         GeoObjectBean buildingGO = new GeoObjectBean();
         //to select once, instead of every time
-        if (buildingGeoObjectTypeBean == null || !geoObjectTypeDAO.sessionContains(buildingGeoObjectTypeBean)) {
+        if (buildingGeoObjectTypeBean == null || !geoObjectTypeDAO.isManaged(buildingGeoObjectTypeBean)) {
             buildingGeoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.BUILDING);
         }
         buildingGO.setGeoObjectTypeBean(buildingGeoObjectTypeBean);
@@ -145,6 +155,7 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
 
     /**
      * Get number of rows in excel file
+     *
      * @param excelFile
      * @return
      * @throws IOException
@@ -173,6 +184,7 @@ public class ExcelToModelConverter extends HsqldbJUnit4SpringContextTests {
 
     /**
      * Just streets prefixes to remember
+     *
      * @param streetName
      * @return
      */

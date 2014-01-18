@@ -1,6 +1,6 @@
 package mdrive.page.go.replies;
 
-import mdrive.business.bean.GoReplyBean;
+import mdrive.business.model.GoReplyBean;
 import org.apache.wicket.extensions.breadcrumb.IBreadCrumbModel;
 import org.apache.wicket.extensions.breadcrumb.panel.BreadCrumbPanel;
 import org.apache.wicket.markup.html.basic.Label;

@@ -2,7 +2,8 @@ package mdrive.page.lift;
 
 import mdrive.app.MApplication;
 import mdrive.app.MSession;
-import mdrive.business.bean.GeoObjectBean;
+import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.model.GeoObjectBean;
 import mdrive.component.autocompletegeo.AutoCompleteStreetBuildingPanel;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
@@ -12,6 +13,7 @@ import org.apache.wicket.markup.html.form.FormComponentPanel;
 import org.apache.wicket.markup.html.panel.ComponentFeedbackPanel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 /**
  * User: Elena
@@ -35,6 +37,9 @@ public class MyLocationPanel extends FormComponentPanel {
     public static final String LOCATION_UNKNOWN_PROPERTY = "locationUnknown";
     private WebMarkupContainer locationSelectionPanel;
     private AutoCompleteStreetBuildingPanel autoCompleteStreetBuildingPanel;
+    
+    @SpringBean
+    GeoObjectDAO geoObjectDAO;
 
     public MyLocationPanel(String id) {
         super(id);
@@ -85,11 +90,11 @@ public class MyLocationPanel extends FormComponentPanel {
     }
 
     public String getCurrentLocationLinkLabel() {
-        GeoObjectBean streetBean = MApplication.get().getGeoObjectDAO()
+        GeoObjectBean streetBean = geoObjectDAO
                 .getFullGeoObjectBeanById(MSession.get().getUserLocationStreetId());
         String streetName = streetBean.getObjectI18Name().getValue();
 
-        GeoObjectBean buildingBean = MApplication.get().getGeoObjectDAO()
+        GeoObjectBean buildingBean = geoObjectDAO
                 .getFullGeoObjectBeanById(MSession.get().getUserLocationBuildingId());
         String buildingName = buildingBean.getObjectI18Name().getValue();
 

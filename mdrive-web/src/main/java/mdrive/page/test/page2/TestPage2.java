@@ -1,6 +1,6 @@
 package mdrive.page.test.page2;
 
-import mdrive.business.bean.UserBean;
+import mdrive.business.model.UserBean;
 import mdrive.component.date.CompoundDateTimeField;
 import org.apache.wicket.extensions.yui.calendar.DateTimeField;
 import org.apache.wicket.markup.html.WebPage;

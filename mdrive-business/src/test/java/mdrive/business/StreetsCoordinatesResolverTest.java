@@ -1,25 +1,26 @@
 package mdrive.business;
 
-import mdrive.business.bean.CoordinatesBean;
-import mdrive.business.bean.GeoObjectBean;
-import mdrive.business.bean.GeoObjectTypeBean;
-import mdrive.business.bean.I18NameBean;
-import mdrive.business.bean.embeddable.Point;
-import mdrive.business.dao.hibernate.GeoObjectDAO;
-import mdrive.business.dao.hibernate.GeoObjectTypeDAO;
+import mdrive.business.config.JpaTestConfig;
+import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GeoObjectTypeDAO;
 import mdrive.business.helper.Translit;
+import mdrive.business.model.CoordinatesBean;
+import mdrive.business.model.GeoObjectBean;
+import mdrive.business.model.GeoObjectTypeBean;
+import mdrive.business.model.I18NameBean;
+import mdrive.business.model.embeddable.Point;
 import mdrive.business.type.Constants;
 import mdrive.business.type.GeoObjectTypeCode;
 import mdrive.geo.YandexRequest;
 import net.opengis.gml.FeatureMemberType;
 import net.opengis.gml.MetaDataPropertyType;
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.yandex.maps.ymaps._1.GeoObjectType;
 import ru.yandex.maps.ymaps._1.YmapsType;
@@ -58,8 +59,9 @@ CREATE TABLE COORDINATES_LOG (
 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:mysqlTestApplicationContext.xml"})
-public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4SpringContextTests {
+@ContextConfiguration(classes = JpaTestConfig.class)
+public class StreetsCoordinatesResolverTest {
+    private static final Logger log = Logger.getLogger(StreetsCoordinatesResolverTest.class);
     /**
      * Task is to find street with unresolved building coordinates (at least one building)
      * resolveNextStreet them, and store to database. DB is remote mysql.
@@ -87,7 +89,7 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
 
         //Get Next Street To Work On
         Long streetId = getNextStreetId();
-        GeoObjectBean streetBean = geoObjectDAO.findById(streetId);
+        GeoObjectBean streetBean = geoObjectDAO.findOne(streetId);
         String streetNameUk = streetBean.getObjectI18Name().getValue(Constants.LOCALE_UK);
         //write to log at the beginning, to prevent infinite loop on error
         writeDBLog(streetBean.getId(), "start", "start", 0L, 0L, Translit.toTranslit(streetNameUk));
@@ -96,7 +98,7 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
         try {
             for (GeoObjectBean buildingBean : buildingBeans) {
                 String buildingNameUk = buildingBean.getObjectI18Name().getValue(Constants.LOCALE_UK);
-                logger.debug(CITY_UK + ", " + streetNameUk + ", " + buildingNameUk);
+                log.debug(CITY_UK + ", " + streetNameUk + ", " + buildingNameUk);
                 //Resolve Coordinates Of Building
                 if (true == resolveBuildingCoordinates(buildingBean, CITY_UK, streetNameUk, buildingNameUk)) {
                     resolvedBuildings += " " + buildingNameUk;
@@ -112,10 +114,10 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
             }
         } catch (Exception e) {
             //try-catch to prevent data loss
-            logger.error(e);
+            log.error(e);
         }
         //save results
-        geoObjectDAO.saveOrUpdateAll(buildingBeans);
+        geoObjectDAO.persist(buildingBeans);
         //
         Long totalBuildingsLeft = geoObjectDAO.getTotalUnresolvedBuildingsLeft();
         writeDBLog(streetBean.getId(),
@@ -203,11 +205,11 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
 
         List<FeatureMemberType> featureMemberList = ymapsType.getGeoObjectCollection().getFeatureMember();
         if (featureMemberList == null) {
-            logger.error("List of buildings in yandex response is null");
+            log.error("List of buildings in yandex response is null");
             return false;
         }
         if (featureMemberList.size() != 1) {
-            logger.error("Size of List of buildings !=1  size = " + featureMemberList.size());
+            log.error("Size of List of buildings !=1  size = " + featureMemberList.size());
             return false;
         }
         for (FeatureMemberType featureMemberType : featureMemberList) {
@@ -224,7 +226,7 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
             buildingBean.getCoordinatesBean().setUpperRight(new Point(upperRight));
 
             //process CITY_AREA
-            if (cityAreaGO == null || !geoObjectDAO.sessionContains(cityAreaGO)) {
+            if (cityAreaGO == null || !geoObjectDAO.isManaged(cityAreaGO)) {
                 String addressText = geoObjectType.getMetaDataProperty().getGeocoderMetaData().getText();
                 cityAreaGO = getOrCreateCityAreaGeoObject(getCityAreaName(addressText));
             }
@@ -243,7 +245,7 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
     //search for existing City-Area before creating new one
     private GeoObjectBean getOrCreateCityAreaGeoObject(String cityAreaName) {
         //get type bean
-        if (cityAreaGeoObjectTypeBean == null || !geoObjectTypeDAO.sessionContains(cityAreaGeoObjectTypeBean)) {
+        if (cityAreaGeoObjectTypeBean == null || !geoObjectTypeDAO.isManaged(cityAreaGeoObjectTypeBean)) {
             cityAreaGeoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.CITY_AREA);
         }
         // search in DB first
@@ -265,19 +267,19 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
             cityAreaGO.setCoordinatesBean(coordinatesBean);
             //city and country will be created later
             cityAreaGO.setParentGeoObjectBean(null);
-            geoObjectDAO.create(cityAreaGO);
+            geoObjectDAO.persist(cityAreaGO);
             return cityAreaGO;
         }
     }
 
     private String getCityAreaName(String addressText) {
         if (StringUtils.isEmpty(addressText)) {
-            logger.error("Can't get CityArea: Address text is empty");
+            log.error("Can't get CityArea: Address text is empty");
             return "";
         }
         String[] parts = addressText.split(",");
         if (parts.length != 5) {
-            logger.error(
+            log.error(
                     "Can't get CityArea: Address text doesn't contain 5 parts (Country, City, City-Area, Street, Building) ");
             return "";
         }
@@ -295,7 +297,7 @@ public class StreetsCoordinatesResolverTest extends AbstractTransactionalJUnit4S
      */
     private Float getLongLat(String pos, int index) {
         if (StringUtils.isEmpty(pos)) {
-            logger.error("Can't get coordinates from pos, it's empty");
+            log.error("Can't get coordinates from pos, it's empty");
             return Float.valueOf(0);
         }
         String[] coords = pos.split(" ");

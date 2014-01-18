@@ -2,20 +2,13 @@ package mdrive.business.service.impl;
 
 import mdrive.business.service.DBUnitDataExporter;
 import org.apache.log4j.Logger;
-import org.dbunit.database.DatabaseConfig;
-import org.dbunit.database.DatabaseConnection;
-import org.dbunit.database.DatabaseSequenceFilter;
-import org.dbunit.database.IDatabaseConnection;
-import org.dbunit.database.QueryDataSet;
+import org.dbunit.database.*;
 import org.dbunit.dataset.FilteredDataSet;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.csv.CsvDataSetWriter;
 import org.dbunit.dataset.filter.ITableFilter;
 import org.dbunit.dataset.xml.XmlDataSetWriter;
 import org.dbunit.ext.hsqldb.HsqldbDataTypeFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.io.FileOutputStream;
@@ -26,7 +19,6 @@ import java.util.regex.Pattern;
 /**
  * User: andrey.osipov
  */
-@Component
 public class DBUnitDataExporterImpl implements DBUnitDataExporter {
     private static final Logger log = Logger.getLogger(DBUnitDataExporterImpl.class);
 
@@ -34,9 +26,11 @@ public class DBUnitDataExporterImpl implements DBUnitDataExporter {
     //write csv, otherwise xml
     private static final boolean WRITE_CSV = true;
 
-    @Autowired
-    @Qualifier(value = "dataSource")
     private DataSource dataSource;
+
+    public DBUnitDataExporterImpl(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     /**
      * See exportTables() below, this one with default charset UTF-8

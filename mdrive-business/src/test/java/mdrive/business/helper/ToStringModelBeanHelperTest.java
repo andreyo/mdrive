@@ -1,6 +1,6 @@
 package mdrive.business.helper;
 
-import mdrive.business.bean.GoBidBean;
+import mdrive.business.model.GoBidBean;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;

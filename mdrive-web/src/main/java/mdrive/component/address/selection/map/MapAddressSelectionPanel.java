@@ -1,7 +1,7 @@
 package mdrive.component.address.selection.map;
 
-import mdrive.app.MApplication;
-import mdrive.business.bean.GeoObjectBean;
+import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.model.GeoObjectBean;
 import mdrive.business.type.GeoObjectTypeCode;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxCheckBox;
@@ -11,8 +11,8 @@ import org.apache.wicket.markup.html.form.FormComponentPanel;
 import org.apache.wicket.markup.html.internal.HtmlHeaderContainer;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -23,6 +23,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class MapAddressSelectionPanel extends FormComponentPanel<GeoObjectBean> {
+
+    @SpringBean
+    GeoObjectDAO geoObjectDao;
 
     Form form;
     AjaxCheckBox showHideTestBuildingsCheckBox;
@@ -45,7 +48,7 @@ public class MapAddressSelectionPanel extends FormComponentPanel<GeoObjectBean> 
         Float latitude = Float.valueOf("50.45351");
         Float longtitude = Float.valueOf("30.516489");
         Float radius = Float.valueOf(2);
-        final List<GeoObjectBean> geoObjectsList = MApplication.get().getGeoObjectDAO()
+        final List<GeoObjectBean> geoObjectsList = geoObjectDao
                 .getGeoObjectsByLocation(latitude, longtitude, radius, GeoObjectTypeCode.BUILDING);
     }
 
@@ -70,7 +73,7 @@ public class MapAddressSelectionPanel extends FormComponentPanel<GeoObjectBean> 
             @Override
             protected void onUpdate(AjaxRequestTarget target) {
                 //show/hide buildings
-                if(showHideTestBuildings) {
+                if (showHideTestBuildings) {
                     target.appendJavaScript(" showBuildingsOnTheMap();");
                 } else {
                     target.appendJavaScript(" hideBuildingsOnTheMap();");

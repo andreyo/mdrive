@@ -9,15 +9,15 @@
         <property name="hibernate.hbm2ddl.auto">validate</property><!-- this is for manual select -->
 
         <!-- Persistent classes -->
-        <mapping class="mdrive.business.bean.CoordinatesBean"/>
-        <mapping class="mdrive.business.bean.GeoObjectBean"/>
-        <mapping class="mdrive.business.bean.GeoObjectTypeBean"/>
-        <mapping class="mdrive.business.bean.GoBidBean"/>
-        <mapping class="mdrive.business.bean.GoReplyBean"/>
-        <mapping class="mdrive.business.bean.I18NameBean"/>
-        <mapping class="mdrive.business.bean.SettingsBean"/>
-        <mapping class="mdrive.business.bean.UserBean"/>
-        <mapping class="mdrive.business.bean.UserTypeBean"/>
+        <mapping class="mdrive.business.model.CoordinatesBean"/>
+        <mapping class="mdrive.business.model.GeoObjectBean"/>
+        <mapping class="mdrive.business.model.GeoObjectTypeBean"/>
+        <mapping class="mdrive.business.model.GoBidBean"/>
+        <mapping class="mdrive.business.model.GoReplyBean"/>
+        <mapping class="mdrive.business.model.I18NameBean"/>
+        <mapping class="mdrive.business.model.SettingsBean"/>
+        <mapping class="mdrive.business.model.UserBean"/>
+        <mapping class="mdrive.business.model.UserTypeBean"/>
 
     </session-factory>
 </hibernate-configuration>

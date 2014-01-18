@@ -1,22 +1,29 @@
 package mdrive.business;
 
-import mdrive.business.bean.CoordinatesBean;
-import mdrive.business.bean.GeoObjectBean;
-import mdrive.business.bean.I18NameBean;
-import mdrive.business.dao.hibernate.GeoObjectDAO;
-import mdrive.business.dao.hibernate.GeoObjectTypeDAO;
+import mdrive.business.config.JpaTestConfig;
+import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GeoObjectTypeDAO;
+import mdrive.business.model.CoordinatesBean;
+import mdrive.business.model.GeoObjectBean;
+import mdrive.business.model.I18NameBean;
 import mdrive.business.service.DBUnitDataExporter;
+import mdrive.business.service.DBUnitDataLoader;
 import mdrive.business.type.GeoObjectTypeCode;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * User: andrey.osipov
  * Date: 6/10/11
  * Time: 4:39 PM
  */
-public class DBExporterTest extends HsqldbJUnit4SpringContextTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = JpaTestConfig.class)
+public class DBExporterTest {
     private static final String[] TABLE_NAMES = {"I18NAME", "GEO_OBJECT", "GO_BID", "GO_REPLY"};
 
 
@@ -27,13 +34,16 @@ public class DBExporterTest extends HsqldbJUnit4SpringContextTests {
     GeoObjectTypeDAO geoObjectTypeDAO;
 
     @Autowired
+    DBUnitDataLoader dbUnitDataLoader;
+
+    @Autowired
     DBUnitDataExporter dbUnitDataExporter;
 
     @Test
     @Rollback(false)
     //do this in separate transaction, which is commited at the end, because exportTables will hang on not-commited table
     public void init() throws Exception {
-        initTestData();
+        dbUnitDataLoader.initTestData();
 //        initTestDataCsv();
 //        addDataIntoDB();
     }
@@ -56,6 +66,6 @@ public class DBExporterTest extends HsqldbJUnit4SpringContextTests {
         geoObjectBean.setCoordinatesBean(coordinatesBean);
         geoObjectBean.setObjectI18Name(new I18NameBean("new_street", "новая_улица", "nova_vulitsa"));
         geoObjectBean.setParentGeoObjectBean(null);
-        geoObjectDAO.create(geoObjectBean);
+        geoObjectDAO.persist(geoObjectBean);
     }
 }

@@ -44,56 +44,6 @@
             </testResource>
         </testResources>
         <plugins>
-            <!--Hibernate reverse engineering-->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>hibernate3-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <components>
-                        <component>
-                            <name>hbm2java</name>
-                            <outputDirectory>src/main/java/generated</outputDirectory>
-                            <implementation>jdbcconfiguration</implementation>
-                        </component>
-                        <component>
-                            <name>hbm2ddl</name>
-                            <implementation>annotationconfiguration</implementation>
-                        </component>
-                    </components>
-                    <componentProperties>
-                        <!--hbm2java properties "reverse engineering"-->
-                        <revengfile>/src/main/resources/reveng/model.reveng.xml</revengfile>
-                        <propertyfile>/src/main/resources/reveng/hibernate.properties</propertyfile>
-                        <jdk5>true</jdk5>
-                        <!--<ejb3>true</ejb3>--><!--hbm2ddl properties annotated classes to SQL-->
-                        <configurationfile>/src/main/resources/hbm2ddl/hibernate.cfg.xml</configurationfile>
-                        <outputfilename>schema.ddl</outputfilename>
-                    </componentProperties>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.15</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>oracle</groupId>
-                        <artifactId>ojdbc5</artifactId>
-                        <version>11.2.0.2.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.hsqldb</groupId>
-                        <artifactId>hsqldb</artifactId>
-                        <version>2.0.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>cglib</groupId>
-                        <artifactId>cglib-nodep</artifactId>
-                        <version>2.1_3</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -113,6 +63,10 @@
         <!--Spring-->
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
         </dependency>
         <dependency>
@@ -127,7 +81,8 @@
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.0.CR2</version>
         </dependency>
         <dependency>
             <groupId>javassist</groupId>
@@ -139,6 +94,22 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>7.0.41</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tomcat</groupId>
+                    <artifactId>tomcat-juli</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.extras</groupId>
+            <artifactId>tomcat-extras-juli-adapters</artifactId>
+            <version>7.0.41</version>
         </dependency>
 
         <!--Logging-->
