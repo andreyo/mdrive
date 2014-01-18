@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://maps.yandex.ru/geocoder/1.x" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" schemaLocation="response1.xsd"/>
+  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="response2.xsd"/>
+  <xs:import namespace="http://maps.yandex.ru/ymaps/1.x" schemaLocation="response3.xsd"/>
+  <xs:element name="GeocoderMetaData" type="x:GeocoderMetaDataType" xmlns:x="http://maps.yandex.ru/geocoder/1.x"/>
+  <xs:element name="GeocoderResponseMetaData" type="x:GeocoderResponseMetaDataType" xmlns:x="http://maps.yandex.ru/geocoder/1.x"/>
+  <xs:complexType name="GeocoderMetaDataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="kind"/>
+      <xs:element type="xs:string" name="text"/>
+      <xs:element type="xs:string" name="precision"/>
+      <xs:element ref="urn:AddressDetails" xmlns:urn="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeocoderResponseMetaDataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="request"/>
+      <xs:element type="xs:string" name="found"/>
+      <xs:element type="xs:string" name="results"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

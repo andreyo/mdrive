@@ -1,6 +1,6 @@
 package mdrive.component.autocompletegeo;
 
-import mdrive.business.bean.GeoObjectBean;
+import mdrive.business.model.GeoObjectBean;
 import mdrive.component.autocomplete.AutoCompleteObjectTextField;
 
 /**

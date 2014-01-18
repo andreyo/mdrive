@@ -1,0 +1,89 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- server key http://77.120.121.242 -->
+    <script src="http://api-maps.yandex.ru/1.1/index.xml?key=AD1TuU4BAAAAVv1xOwQAUdDWIChwLqgjpHQCgY1Br1georYAAAAAAAAAAAAZnL0JgPXq0A_NZSFXxnYFbMugog=="
+            type="text/javascript"></script>
+    <script type="text/javascript">
+        var map;
+        var buildings = new YMaps.GeoObjectCollection();
+        buildings.add(new YMaps.Placemark(new YMaps.GeoPoint(30.516489, 50.45351)));
+        buildings.add(new YMaps.Placemark(new YMaps.GeoPoint(30.526489,
+                50.44351)));// Создание обработчика для события window.onLoad
+        YMaps.jQuery(function () {
+            // Создание экземпляра карты и его привязка к созданному контейнеру
+            map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
+
+            // Установка для карты ее центра и масштаба
+            map.setCenter(new YMaps.GeoPoint(30.530946, 50.443705), 11);
+
+            // Добавление элементов управления
+            map.enableScrollZoom();
+            map.addControl(new YMaps.ToolBar());
+            map.addControl(new YMaps.TypeControl());
+            map.addControl(new YMaps.Zoom());
+
+            var gCollection = new YMaps.GeoObjectCollection();
+
+            YMaps.Events.observe(map, map.Events.Click, function (map, mEvent) {
+                // Добавление метки на карту
+                if (gCollection.length() < 1) {
+                    var placemark = new YMaps.Placemark(mEvent.getGeoPoint(), {draggable: true})
+                    gCollection.add(placemark);
+                    map.addOverlay(placemark);
+
+                    //make it removable by click on it
+                    YMaps.Events.observe(placemark, map.Events.Click, function (map, mEvent) {
+                        map.remove(placemark);
+                    }, this);
+
+                    //update on DragEnd
+                    YMaps.Events.observe(placemark, placemark.Events.DragEnd, function (obj) {
+                        updateHidden(obj.getGeoPoint());
+                    });
+
+                    //update on Click
+                    updateHidden(mEvent.getGeoPoint());
+                }
+            }, this);
+        });
+
+        function updateHidden(point) {
+            myHidden.value = point;
+            myHidden.onchange();
+        }
+
+        function showBuildings(pointsList) {
+            map.removeAllOverlays();
+            map.addOverlay();
+        }
+
+        function showBuildingsOnTheMap() {
+            map.addOverlay(buildings);
+        }
+
+        function hideBuildingsOnTheMap() {
+            map.removeOverlay(buildings);
+        }
+    </script>
+</head>
+<body>
+<table width="100%">
+    <tr>
+        <td>
+            <div id="YMapsID" style="width:400px;height:350px"></div>
+        </td>
+        <td>
+            <div wicket:id="panel"/>
+            <input type="hidden" wicket:id="myHidden" id="myHidden" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

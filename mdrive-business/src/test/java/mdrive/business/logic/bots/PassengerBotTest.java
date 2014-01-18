@@ -1,6 +1,6 @@
 package mdrive.business.logic.bots;
 
-import mdrive.business.HsqldbJUnit4SpringContextTests;
+import mdrive.business.config.JpaTestConfig;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,8 +19,8 @@ import static org.junit.Assert.fail;
  * @since <pre>03/26/2011</pre>
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:testApplicationContext.xml"})
-public class PassengerBotTest extends HsqldbJUnit4SpringContextTests {
+@ContextConfiguration(classes = JpaTestConfig.class)
+public class PassengerBotTest {
 
     private static final Logger log = Logger.getLogger(PassengerBotTest.class);
 

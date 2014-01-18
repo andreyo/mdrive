@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mdrive-business" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mdrive-geo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mdrive-report" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mdrive-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/mojo" charset="UTF-8" />
+  </component>
+</project>
+

@@ -8,7 +8,7 @@ package mdrive.component.address.selection.map;
  * To change this template use File | Settings | File Templates.
  */
 
-import mdrive.business.bean.GeoObjectBean;
+import mdrive.business.model.GeoObjectBean;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
 import org.apache.wicket.markup.html.WebPage;

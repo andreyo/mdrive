@@ -1,7 +1,8 @@
 package mdrive.page.lift;
 
-import mdrive.business.bean.GeoObjectBean;
-import mdrive.business.bean.GoBidBean;
+import mdrive.business.dao.GoBidDAO;
+import mdrive.business.model.GeoObjectBean;
+import mdrive.business.model.GoBidBean;
 import mdrive.page.lift.filter.SelectFilterPanel;
 import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxFallbackDefaultDataTable;
 import org.apache.wicket.extensions.breadcrumb.IBreadCrumbModel;
@@ -16,6 +17,7 @@ import org.apache.wicket.markup.html.panel.ComponentFeedbackPanel;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.ResourceModel;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,9 @@ import java.util.List;
  */
 public class LiftPanel extends BreadCrumbPanel {
     private static final int ITEMS_PER_PAGE = 8;
+
+    @SpringBean
+    private GoBidDAO goBidDAO;
 
     private boolean initialized;
 
@@ -137,7 +142,7 @@ public class LiftPanel extends BreadCrumbPanel {
         }
 
         private LiftPanelDataProvider getDataProvider() {
-            return new LiftPanelDataProvider(searchInGeoObjectBean);
+            return new LiftPanelDataProvider(goBidDAO, searchInGeoObjectBean);
         }
     }
 }

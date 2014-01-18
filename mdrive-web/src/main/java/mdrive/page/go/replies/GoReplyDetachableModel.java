@@ -1,8 +1,9 @@
 package mdrive.page.go.replies;
 
-import mdrive.app.MApplication;
-import mdrive.business.bean.GoReplyBean;
+import mdrive.business.dao.GoReplyDAO;
+import mdrive.business.model.GoReplyBean;
 import org.apache.wicket.model.LoadableDetachableModel;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,6 +13,9 @@ import org.apache.wicket.model.LoadableDetachableModel;
  * To change this template use File | Settings | File Templates.
  */
 public class GoReplyDetachableModel extends LoadableDetachableModel<GoReplyBean> {
+
+    @SpringBean
+    GoReplyDAO goReplyDAO;
 
     private long id;
 
@@ -25,6 +29,6 @@ public class GoReplyDetachableModel extends LoadableDetachableModel<GoReplyBean>
 
     @Override
     protected GoReplyBean load() {
-        return MApplication.get().getGoReplyDAO().findById(id);
+        return goReplyDAO.findOne(id);
     }
 }

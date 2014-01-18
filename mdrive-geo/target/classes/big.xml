@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ymaps xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:x="http://www.yandex.ru/xscript"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+    <GeoObjectCollection>
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+            <GeocoderResponseMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                <request>Киев,Победы</request>
+                <found>7</found>
+                <results>10</results>
+            </GeocoderResponseMetaData>
+        </metaDataProperty>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>street</kind>
+                        <text>Украина, Киев, Соломенский район, Победы проспект</text>
+                        <precision>street</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <Locality>
+                                    <LocalityName>Киев</LocalityName>
+                                    <DependentLocality>
+                                        <DependentLocalityName>Соломенский район</DependentLocalityName>
+                                        <Thoroughfare>
+                                            <ThoroughfareName>Победы проспект</ThoroughfareName>
+                                        </Thoroughfare>
+                                    </DependentLocality>
+                                </Locality>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">Победы проспект</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.319030 50.452127</lowerCorner>
+                        <upperCorner>30.489962 50.464721</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.404496 50.458424</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>street</kind>
+                        <text>Украина, Киев, Святошинский район, улица Победы</text>
+                        <precision>street</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <Locality>
+                                    <LocalityName>Киев</LocalityName>
+                                    <DependentLocality>
+                                        <DependentLocalityName>Святошинский район</DependentLocalityName>
+                                        <Thoroughfare>
+                                            <ThoroughfareName>улица Победы</ThoroughfareName>
+                                        </Thoroughfare>
+                                    </DependentLocality>
+                                </Locality>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">улица Победы</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.348091 50.433346</lowerCorner>
+                        <upperCorner>30.381023 50.454376</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.364557 50.443862</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>street</kind>
+                        <text>Украина, Киев, Шевченковский район, Победы площадь</text>
+                        <precision>street</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <Locality>
+                                    <LocalityName>Киев</LocalityName>
+                                    <DependentLocality>
+                                        <DependentLocalityName>Шевченковский район</DependentLocalityName>
+                                        <Thoroughfare>
+                                            <ThoroughfareName>Победы площадь</ThoroughfareName>
+                                        </Thoroughfare>
+                                    </DependentLocality>
+                                </Locality>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">Победы площадь</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.476262 50.436123</lowerCorner>
+                        <upperCorner>30.509195 50.457151</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.492728 50.446638</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>vegetation</kind>
+                        <text>Украина, Киевская область, Бровары, Победы парк</text>
+                        <precision>other</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <AdministrativeArea>
+                                    <AdministrativeAreaName>Киевская область</AdministrativeAreaName>
+                                    <Locality>
+                                        <LocalityName>Бровары</LocalityName>
+                                        <Premise>
+                                            <PremiseName>Победы парк</PremiseName>
+                                        </Premise>
+                                    </Locality>
+                                </AdministrativeArea>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">Победы парк</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.755414 50.485736</lowerCorner>
+                        <upperCorner>30.821296 50.527751</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.788355 50.506748</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>street</kind>
+                        <text>Украина, Киевская область, Буча, улица Победы</text>
+                        <precision>street</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <AdministrativeArea>
+                                    <AdministrativeAreaName>Киевская область</AdministrativeAreaName>
+                                    <Locality>
+                                        <LocalityName>Буча</LocalityName>
+                                        <Thoroughfare>
+                                            <ThoroughfareName>улица Победы</ThoroughfareName>
+                                        </Thoroughfare>
+                                    </Locality>
+                                </AdministrativeArea>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">улица Победы</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.215751 50.530746</lowerCorner>
+                        <upperCorner>30.248683 50.551732</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.232217 50.541240</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>street</kind>
+                        <text>Украина, Киевская область, Буча, Победы переулок</text>
+                        <precision>street</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <AdministrativeArea>
+                                    <AdministrativeAreaName>Киевская область</AdministrativeAreaName>
+                                    <Locality>
+                                        <LocalityName>Буча</LocalityName>
+                                        <Thoroughfare>
+                                            <ThoroughfareName>Победы переулок</ThoroughfareName>
+                                        </Thoroughfare>
+                                    </Locality>
+                                </AdministrativeArea>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">Победы переулок</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.214484 50.530345</lowerCorner>
+                        <upperCorner>30.247416 50.551331</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.230950 50.540839</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+        <featureMember xmlns="http://www.opengis.net/gml">
+            <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x">
+                <metaDataProperty xmlns="http://www.opengis.net/gml">
+                    <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+                        <kind>street</kind>
+                        <text>Украина, Киевская область, Борисполь, улица Победы</text>
+                        <precision>street</precision>
+                        <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+                            <Country>
+                                <CountryNameCode>UA</CountryNameCode>
+                                <CountryName>Украина</CountryName>
+                                <AdministrativeArea>
+                                    <AdministrativeAreaName>Киевская область</AdministrativeAreaName>
+                                    <Locality>
+                                        <LocalityName>Борисполь</LocalityName>
+                                        <Thoroughfare>
+                                            <ThoroughfareName>улица Победы</ThoroughfareName>
+                                        </Thoroughfare>
+                                    </Locality>
+                                </AdministrativeArea>
+                            </Country>
+                        </AddressDetails>
+                    </GeocoderMetaData>
+                </metaDataProperty>
+                <name xmlns="http://www.opengis.net/gml">улица Победы</name>
+                <boundedBy xmlns="http://www.opengis.net/gml">
+                    <Envelope>
+                        <lowerCorner>30.966886 50.334997</lowerCorner>
+                        <upperCorner>30.999818 50.356070</upperCorner>
+                    </Envelope>
+                </boundedBy>
+                <Point xmlns="http://www.opengis.net/gml">
+                    <pos>30.983352 50.345535</pos>
+                </Point>
+            </GeoObject>
+        </featureMember>
+    </GeoObjectCollection>
+</ymaps>

@@ -10,27 +10,24 @@ import org.dbunit.dataset.csv.CsvDataSet;
 import org.dbunit.dataset.xml.XmlDataSet;
 import org.dbunit.ext.hsqldb.HsqldbDataTypeFactory;
 import org.dbunit.operation.DatabaseOperation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
-import java.io.File;
 import java.io.InputStreamReader;
 
 /**
  * User: andrey.osipov
  */
-@Component
 public class DBUnitDataLoaderImpl implements DBUnitDataLoader {
     private static final Logger log = Logger.getLogger(DBUnitDataLoaderImpl.class);
 
     private final static boolean USE_XML_DB = true;
 
-    @Autowired
-    @Qualifier(value = "dataSource")
     private DataSource dataSource;
+
+    public DBUnitDataLoaderImpl(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Override
     public void initTestData() throws Exception {

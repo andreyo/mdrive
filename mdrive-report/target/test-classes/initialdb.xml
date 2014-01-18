@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+
+    <table name="script_registry">
+        <column>ID</column>
+        <column>script_code</column>
+        <column>script_type</column>
+        <column>description</column>
+        <column>data</column>
+        <column>updated_on</column>
+        <row>
+            <value>100</value>
+            <value>statUpdateScript</value>
+            <value>1</value>
+            <value>zzz</value>
+            <!--  			<value>SELECT XMLROOT( XMLELEMENT("Zzz", XMLAGG(XMLELEMENT("Item", e.id) ORDER BY id)) , VERSION '1.0', STANDALONE YES) AS result FROM PROCESS_DEFINITION e</value> -->
+            <value>Select CONFIGURATION as result FROM PROCESS_DEFINITION</value>
+            <value>2010-02-26</value>
+        </row>
+        <row>
+            <value>101</value>
+            <value>statUpdateScript101</value>
+            <value>1</value>
+            <value>zzz</value>
+            <!--  			<value>SELECT XMLROOT( XMLELEMENT("Zzz", XMLAGG(XMLELEMENT("Item", e.id) ORDER BY id)) , VERSION '1.0', STANDALONE YES) AS result FROM PROCESS_DEFINITION e</value> -->
+            <value>Select CONFIGURATION as result FROM PROCESS_DEFINITION</value>
+            <value>2010-02-26</value>
+        </row>
+    </table>   
+
+</dataset>

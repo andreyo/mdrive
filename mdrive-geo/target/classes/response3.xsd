@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://maps.yandex.ru/ymaps/1.x" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="http://maps.yandex.ru/geocoder/1.x" schemaLocation="response.xsd"/>
+    <xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" schemaLocation="response1.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="response2.xsd"/>
+    <xs:element name="GeoObject" type="x:GeoObjectType" xmlns:x="http://maps.yandex.ru/ymaps/1.x"/>
+    <xs:element name="ymaps" type="x:ymapsType" xmlns:x="http://maps.yandex.ru/ymaps/1.x"/>
+    <xs:complexType name="ymapsType">
+        <xs:sequence>
+            <xs:element type="x:GeoObjectCollectionType" name="GeoObjectCollection"
+                        xmlns:x="http://maps.yandex.ru/ymaps/1.x"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GeoObjectCollectionType">
+        <xs:sequence>
+            <xs:element ref="gml:metaDataProperty" xmlns:gml="http://www.opengis.net/gml"/>
+            <xs:element ref="gml:featureMember" xmlns:gml="http://www.opengis.net/gml" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GeoObjectType">
+        <xs:sequence>
+            <xs:element ref="gml:metaDataProperty" xmlns:gml="http://www.opengis.net/gml"/>
+            <xs:element ref="gml:name" xmlns:gml="http://www.opengis.net/gml"/>
+            <xs:element ref="gml:boundedBy" xmlns:gml="http://www.opengis.net/gml"/>
+            <xs:element ref="gml:Point" xmlns:gml="http://www.opengis.net/gml"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,9 +1,11 @@
 package mdrive.page.go;
 
-import mdrive.app.MApplication;
 import mdrive.app.MSession;
-import mdrive.business.bean.GoBidBean;
-import mdrive.business.bean.UserBean;
+import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GoBidDAO;
+import mdrive.business.dao.UserTypeDAO;
+import mdrive.business.model.GoBidBean;
+import mdrive.business.model.UserBean;
 import mdrive.component.address.selection.AddressSelectionComponent;
 import mdrive.component.editor.PropertyEditorDropDown;
 import mdrive.component.editor.PropertyEditorTextArea;
@@ -24,6 +26,7 @@ import org.apache.wicket.markup.html.panel.ComponentFeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.model.StringResourceModel;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -35,6 +38,15 @@ public class GoBidPanel extends BreadCrumbPanel {
     private static final Logger log = Logger.getLogger(GoBidPanel.class);
     public static final String INPUT_FORM_ID = "form";
     public static final String EDITOR_ID = "editor";
+
+    @SpringBean
+    UserTypeDAO userTypeDAO;
+
+    @SpringBean
+    GeoObjectDAO geoObjectDAO;
+
+    @SpringBean
+    GoBidDAO goBidDAO;
 
     private boolean initialized;
     private Form form;
@@ -167,15 +179,15 @@ public class GoBidPanel extends BreadCrumbPanel {
 
             UserBean userBean = new UserBean();
             userBean.setUserName(MSession.get().getUser());
-            userBean.setUserTypeBean(MApplication.get().getUserTypeDAO().getPassengerUserTypeBean());
+            userBean.setUserTypeBean(userTypeDAO.getPassengerUserTypeBean());
             goBidBean.setUserBean(userBean);
 
-            goBidBean.setFromGeoObjectBean(MApplication.get().getGeoObjectDAO()
-                    .findById(fromAddressSelectionComponent.getModelObject()));
-            goBidBean.setToGeoObjectBean(MApplication.get().getGeoObjectDAO()
-                    .findById(toAddressSelectionComponent.getModelObject()));
+            goBidBean.setFromGeoObjectBean(geoObjectDAO
+                    .findOne(fromAddressSelectionComponent.getModelObject()));
+            goBidBean.setToGeoObjectBean(geoObjectDAO
+                    .findOne(toAddressSelectionComponent.getModelObject()));
 
-            MApplication.get().getGoBidDAO().create(goBidBean);
+            goBidDAO.persist(goBidBean);
             activate(new IBreadCrumbPanelFactory() {
                 public BreadCrumbPanel create(String componentId, IBreadCrumbModel breadCrumbModel) {
                     return new GoRepliesPanel(componentId, breadCrumbModel);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AddressDetails" type="urn:AddressDetailsType" xmlns:urn="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"/>
+  <xs:complexType name="ThoroughfareType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ThoroughfareName"/>
+      <xs:element type="urn:PremiseType" name="Premise" xmlns:urn="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PremiseType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="PremiseNumber"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LocalityType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="LocalityName"/>
+      <xs:element type="urn:ThoroughfareType" name="Thoroughfare" xmlns:urn="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressDetailsType">
+    <xs:sequence>
+      <xs:element type="urn:CountryType" name="Country" xmlns:urn="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CountryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CountryNameCode"/>
+      <xs:element type="xs:string" name="CountryName"/>
+      <xs:element type="urn:LocalityType" name="Locality" xmlns:urn="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

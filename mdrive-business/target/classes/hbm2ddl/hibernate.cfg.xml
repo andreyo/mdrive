@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <!--<property name="hibernate.hbm2ddl.auto">create-drop</property>-->
+        <property name="hibernate.hbm2ddl.auto">validate</property><!-- this is for manual select -->
+
+        <!-- Persistent classes -->
+        <mapping class="mdrive.business.model.CoordinatesBean"/>
+        <mapping class="mdrive.business.model.GeoObjectBean"/>
+        <mapping class="mdrive.business.model.GeoObjectTypeBean"/>
+        <mapping class="mdrive.business.model.GoBidBean"/>
+        <mapping class="mdrive.business.model.GoReplyBean"/>
+        <mapping class="mdrive.business.model.I18NameBean"/>
+        <mapping class="mdrive.business.model.SettingsBean"/>
+        <mapping class="mdrive.business.model.UserBean"/>
+        <mapping class="mdrive.business.model.UserTypeBean"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,6 +1,5 @@
 package mdrive.page.settings;
 
-import mdrive.app.MApplication;
 import mdrive.business.logic.bots.PassengerBot;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
@@ -9,6 +8,7 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.ComponentFeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +19,9 @@ import org.apache.wicket.model.Model;
  */
 //@AuthorizeInstantiation("ADMIN")
 public abstract class DeveloperSettingsPanel extends Panel {
+
+    @SpringBean
+    PassengerBot passengerBot;
 
     public DeveloperSettingsPanel(final String id) {
         super(id);
@@ -59,7 +62,7 @@ public abstract class DeveloperSettingsPanel extends Panel {
             Label label = new Label(componentId, new Model<String>() {
                 @Override
                 public String getObject() {
-                    if (getPassengerBot().isActive()) {
+                    if (passengerBot.isActive()) {
                         return getString("passengerBotLinkStopLabel");
                     } else {
                         return getString("passengerBotLinkStartLabel");
@@ -76,7 +79,7 @@ public abstract class DeveloperSettingsPanel extends Panel {
 
             @Override
             public void onClick(AjaxRequestTarget ajaxRequestTarget) {
-                getPassengerBot().setActive(!getPassengerBot().isActive());
+                passengerBot.setActive(!passengerBot.isActive());
                 if (ajaxRequestTarget != null) {
                     ajaxRequestTarget.add(passengerBotLink);
                 }
@@ -86,9 +89,5 @@ public abstract class DeveloperSettingsPanel extends Panel {
     }
 
     public abstract void doLoadTestData();
-
-    private PassengerBot getPassengerBot() {
-        return MApplication.get().getPassengerBot();
-    }
 
 }
