@@ -40,7 +40,7 @@ public class GoBidBean implements ModelBean {
         this.id = id;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", nullable = false)
     @ForeignKey(name = "FK_USER")
     public UserBean getUserBean() {

@@ -1,10 +1,18 @@
 package mdrive.business.model;
 
-import mdrive.business.model.type.ModelBean;
 import mdrive.business.helper.ToStringModelBeanHelper;
+import mdrive.business.model.type.ModelBean;
 import org.hibernate.annotations.ForeignKey;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @NamedQueries(value = {
         @NamedQuery(name = GeoObjectBean.GET_BUILDINGS_BY_STREET_ID,

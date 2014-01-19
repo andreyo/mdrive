@@ -9,3 +9,6 @@
 # Project Files #
 *.iml
 .idea/
+
+# Logs #
+*.log

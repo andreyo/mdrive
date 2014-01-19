@@ -1,16 +1,11 @@
 package mdrive.page.signin;
 
-import mdrive.page.signin.link.LoginWithFacebookLink;
-import mdrive.page.signin.link.LoginWithGoogleLink;
-import mdrive.page.signin.link.LoginWithOauthLink;
-import mdrive.page.signin.link.LoginWithTwitterLink;
-import mdrive.page.signin.link.LoginWithVkontakteLink;
-import mdrive.page.signin.link.LoginWithYahooLink;
+import mdrive.page.signin.link.*;
 import org.apache.wicket.authroles.authentication.panel.SignInPanel;
+import org.apache.wicket.extensions.breadcrumb.panel.BreadCrumbPanel;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.markup.html.panel.Panel;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +16,7 @@ import java.util.List;
  * Time: 7:17 PM
  */
 //TODO: make it BreadCrumb (can't go back)
-public class CustomSignInPanel extends Panel {
+public class CustomSignInPanel extends BreadCrumbPanel {
 
     public static final String LINK_ID = "linkId";
 
@@ -31,8 +26,13 @@ public class CustomSignInPanel extends Panel {
             new LoginWithVkontakteLink(LINK_ID),
             new LoginWithYahooLink(LINK_ID));
 
+    @Override
+    public String getTitle() {
+        return "Login";
+    }
+
     public CustomSignInPanel(String id, final boolean includeRememberMe) {
-        super(id);
+        super(id, null);
         add(new SignInPanel("regularSignInPanel", includeRememberMe));
 
         ListView<LoginWithOauthLink> loginLinksListView = new ListView<LoginWithOauthLink>("loginLinksListView",

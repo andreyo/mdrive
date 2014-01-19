@@ -2,6 +2,7 @@ package mdrive.page.go.replies;
 
 import mdrive.business.dao.GoReplyDAO;
 import mdrive.business.model.GoReplyBean;
+import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
@@ -16,6 +17,10 @@ public class GoReplyDetachableModel extends LoadableDetachableModel<GoReplyBean>
 
     @SpringBean
     GoReplyDAO goReplyDAO;
+
+    {
+        Injector.get().inject(this);
+    }
 
     private long id;
 
