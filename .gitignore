@@ -1,6 +1,11 @@
-*.class
+# Targets #
+**/target/
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# Project Files #
+*.iml
+.idea/
