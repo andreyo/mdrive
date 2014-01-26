@@ -1,4 +1,4 @@
-package mdrive.business.model.type;
+package mdrive.business.model;
 
 import java.io.Serializable;
 

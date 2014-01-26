@@ -1,7 +1,7 @@
 package mdrive.business.dao.impl;
 
 import mdrive.business.dao.GenericDao;
-import mdrive.business.model.type.ModelBean;
+import mdrive.business.model.ModelBean;
 import org.apache.commons.collections.CollectionUtils;
 
 import javax.persistence.EntityManager;

@@ -1,6 +1,6 @@
 package mdrive.business.helper;
 
-import mdrive.business.model.type.ModelBean;
+import mdrive.business.model.ModelBean;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
 import java.lang.reflect.Field;

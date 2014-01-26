@@ -1,6 +1,6 @@
 package mdrive.app;
 
-import mdrive.app.config.SpringContextConfig;
+import mdrive.app.config.WebConfig;
 import mdrive.page.HomePage;
 import mdrive.page.profile.ProfilePage;
 import mdrive.page.signin.SignInPage;
@@ -38,7 +38,7 @@ public class MApplication extends AuthenticatedWebApplication {
         super.init();
         getDebugSettings().setAjaxDebugModeEnabled(true);
         getDebugSettings().setDevelopmentUtilitiesEnabled(true);
-        springContext = new AnnotationConfigApplicationContext(SpringContextConfig.class);
+        springContext = new AnnotationConfigApplicationContext(WebConfig.class);
         getComponentInstantiationListeners().add(new SpringComponentInjector(this, springContext, true));
 
         getSecuritySettings().setAuthorizationStrategy(new AnnotationsRoleAuthorizationStrategy(this) {
@@ -66,6 +66,9 @@ public class MApplication extends AuthenticatedWebApplication {
         mountPage(ProfilePage.MOUNT_URL, ProfilePage.class);
     }
 
+    public ApplicationContext getSpringContext() {
+        return springContext;
+    }
 
     /**
      * @see org.apache.wicket.Application#getHomePage()

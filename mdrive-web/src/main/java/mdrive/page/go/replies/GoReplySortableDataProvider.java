@@ -32,7 +32,7 @@ public class GoReplySortableDataProvider extends SortableDataProvider<GoReplyBea
     @Override
     public Iterator<GoReplyBean> iterator(int first, int count) {
         SortParam sp = getSort();
-        //TODO: fix
+        //TODO: implement pagination properly
         return goReplyDAO.findAll().iterator();
     }
 

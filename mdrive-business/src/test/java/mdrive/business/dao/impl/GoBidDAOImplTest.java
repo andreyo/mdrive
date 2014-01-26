@@ -15,12 +15,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * User: andrey.osipov
@@ -47,6 +52,9 @@ public class GoBidDAOImplTest {
 
     @Autowired
     private DBUnitDataExporter dbUnitDataExporter;
+
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Before
     public void init() throws Exception {
@@ -88,6 +96,33 @@ public class GoBidDAOImplTest {
         goBidBean.setFromGeoObjectBean(geoObjectDAO.findOne(5L));
         goBidBean.setToGeoObjectBean(geoObjectDAO.findOne(5L));
         goBidDAO.persist(goBidBean);
+    }
+
+    @Test
+    @Rollback(false)
+    public void test1() throws Exception {
+        UserBean userBean = new UserBean();
+        userBean.setUserTypeBean(userTypeDAO.getPassengerUserTypeBean());
+        userBean.setUserName("goga");
+        userDAO.persist(userBean);
+
+        GoBidBean goBidBean1 = new GoBidBean();
+        goBidBean1.setUserBean(userBean);
+        goBidBean1.setFromGeoObjectBean(geoObjectDAO.findOne(5L));
+        goBidBean1.setToGeoObjectBean(geoObjectDAO.findOne(5L));
+
+        GoBidBean goBidBean2 = new GoBidBean();
+        goBidBean2.setUserBean(userBean);
+        goBidBean2.setFromGeoObjectBean(geoObjectDAO.findOne(5L));
+        goBidBean2.setToGeoObjectBean(geoObjectDAO.findOne(5L));
+
+
+        goBidDAO.persist(goBidBean1);
+        goBidDAO.persist(goBidBean2);
+        goBidDAO.delete(goBidBean2);
+        entityManager.flush();
+
+        dbUnitDataExporter.exportTables("");
     }
 
     @Test

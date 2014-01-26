@@ -13,12 +13,12 @@ import org.apache.log4j.Logger;
 /**
  * Thread which will be always running, but in ON and OFF state (doing work or not)
  */
+
+//TODO: replace with scheduledExecutorService (put it to passengerBot)
 abstract class EternalOnOffThread extends Thread {
     private static final Logger log = Logger.getLogger(EternalOnOffThread.class);
     private int sleepTime = 3000;
     private boolean active;
-
-//TODO: implement OneShotOnOff  threads instead of Eternal
 
     @Override
     public void run() {

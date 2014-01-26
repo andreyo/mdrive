@@ -15,7 +15,7 @@ import java.util.List;
  * Date: 3/26/12
  * Time: 7:17 PM
  */
-//TODO: make it BreadCrumb (can't go back)
+//TODO: BreadCrumbs not working properly here
 public class CustomSignInPanel extends BreadCrumbPanel {
 
     public static final String LINK_ID = "linkId";

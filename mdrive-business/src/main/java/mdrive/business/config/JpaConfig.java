@@ -72,8 +72,8 @@ public class JpaConfig {
     }
 
     @Bean
-    public DBUnitDataExporter dbUnitDataExporter(DataSource dataSource) {
-        return new DBUnitDataExporterImpl(dataSource);
+    public DBUnitDataExporter dbUnitDataExporter() {
+        return new DBUnitDataExporterImpl();
     }
 
     @Bean

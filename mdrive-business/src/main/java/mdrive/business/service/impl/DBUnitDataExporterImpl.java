@@ -2,18 +2,24 @@ package mdrive.business.service.impl;
 
 import mdrive.business.service.DBUnitDataExporter;
 import org.apache.log4j.Logger;
-import org.dbunit.database.*;
+import org.dbunit.database.DatabaseConfig;
+import org.dbunit.database.DatabaseConnection;
+import org.dbunit.database.DatabaseSequenceFilter;
+import org.dbunit.database.IDatabaseConnection;
+import org.dbunit.database.QueryDataSet;
 import org.dbunit.dataset.FilteredDataSet;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.csv.CsvDataSetWriter;
 import org.dbunit.dataset.filter.ITableFilter;
 import org.dbunit.dataset.xml.XmlDataSetWriter;
 import org.dbunit.ext.hsqldb.HsqldbDataTypeFactory;
+import org.springframework.jdbc.datasource.ConnectionHolder;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
-import javax.sql.DataSource;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.sql.Connection;
 import java.util.regex.Pattern;
 
 /**
@@ -25,12 +31,7 @@ public class DBUnitDataExporterImpl implements DBUnitDataExporter {
     private static final String NUMERIC_REGEX = "[-+]?\\d*\\.?\\d+";
     //write csv, otherwise xml
     private static final boolean WRITE_CSV = true;
-
-    private DataSource dataSource;
-
-    public DBUnitDataExporterImpl(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    String CSV_EXPORT_DB_DIR = "csv_db_export";
 
     /**
      * See exportTables() below, this one with default charset UTF-8
@@ -59,7 +60,7 @@ public class DBUnitDataExporterImpl implements DBUnitDataExporter {
      */
     @Override
     public void exportTables(String[] tableNames, String destinationFile, Charset charset) throws Exception {
-        IDatabaseConnection connection = new DatabaseConnection(dataSource.getConnection());
+        IDatabaseConnection connection = new DatabaseConnection(getConnectionFromSpringTransaction());
         connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new HsqldbDataTypeFactory());
         IDataSet dataSet;
         if (tableNames != null) {
@@ -76,7 +77,7 @@ public class DBUnitDataExporterImpl implements DBUnitDataExporter {
         //DatabaseSequenceFilter - order tables according to foreign keys
         ITableFilter filter = new DatabaseSequenceFilter(connection);
         if (WRITE_CSV) {
-            CsvDataSetWriter csvWriter = new CsvDataSetWriter("csv_initial_db");
+            CsvDataSetWriter csvWriter = new CsvDataSetWriter(CSV_EXPORT_DB_DIR);
             csvWriter.write(new FilteredDataSet(filter, dataSet));
         } else {
             XmlDataSetWriter xmlDataSetWriter = new XmlDataSetWriter(new FileOutputStream(destinationFile),
@@ -93,5 +94,15 @@ public class DBUnitDataExporterImpl implements DBUnitDataExporter {
             };
             xmlDataSetWriter.write(new FilteredDataSet(filter, dataSet));
         }
+    }
+
+    protected Connection getConnectionFromSpringTransaction() {
+        for (Object value : TransactionSynchronizationManager.getResourceMap().values()) {
+            if (value instanceof ConnectionHolder) {
+                ConnectionHolder connectionHolder = (ConnectionHolder) value;
+                return connectionHolder.getConnection();
+            }
+        }
+        throw new RuntimeException("unable to get Connection from Spring transaction");
     }
 }

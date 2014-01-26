@@ -1,11 +1,10 @@
 package mdrive.business.logic.bots;
 
-import mdrive.business.model.GoBidBean;
 import mdrive.business.dao.GoBidDAO;
+import mdrive.business.model.GoBidBean;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * User: andrey.osipov

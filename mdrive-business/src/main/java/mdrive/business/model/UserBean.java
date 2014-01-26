@@ -1,10 +1,19 @@
 package mdrive.business.model;
 
 import mdrive.business.helper.ToStringModelBeanHelper;
-import mdrive.business.model.type.ModelBean;
 import org.hibernate.annotations.ForeignKey;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.util.List;
 
 @Entity
@@ -64,7 +73,7 @@ public class UserBean implements ModelBean {
         this.userName = userName;
     }
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     public List<GoBidBean> getGoBids() {
         return goBids;
