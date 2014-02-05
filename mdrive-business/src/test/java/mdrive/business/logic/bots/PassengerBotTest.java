@@ -1,6 +1,7 @@
 package mdrive.business.logic.bots;
 
 import mdrive.business.config.JpaTestConfig;
+import mdrive.business.service.bot.PassengerBot;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,14 +34,5 @@ public class PassengerBotTest {
 
     @Test
     public void testBot() {
-        passengerBot.setActive(true);
-        try {
-            //wait
-            Thread.sleep(6000);
-            passengerBot.setActive(false);
-            Thread.sleep(6000);
-        } catch (Exception e) {
-            fail(e.toString());
-        }
     }
 }

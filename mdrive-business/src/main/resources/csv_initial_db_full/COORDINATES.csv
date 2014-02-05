@@ -1,10 +1,10 @@
-ID, CENTER_LAT, CENTER_LONG, LOWER_CORNER_LAT, LOWER_CORNER_LONG, UPPER_CORNER_LAT, UPPER_CORNER_LONG
-"1",null,null,null,null,null,null
-"2",null,null,null,null,null,null
-"3",null,null,null,null,null,null
-"4",null,null,null,null,null,null
-"5",null,null,null,null,null,null
-"6",null,null,null,null,null,null
+ID, CENTER_LATITUDE, CENTER_LONGITUDE, LOWERLEFT_LATITUDE, LOWERLEFT_LONGITUDE, UPPERRIGHT_LATITUDE, UPPERRIGHT_LONGITUDE
+"1","50.45351","30.516489","50.45351","30.516489","50.45351","30.516489"
+"2","50.45351","30.516489","50.45351","30.516489","50.45351","30.516489"
+"3","50.45351","30.516489","50.45351","30.516489","50.45351","30.516489"
+"4","50.45351","30.516489","50.45351","30.516489","50.45351","30.516489"
+"5","50.43175","30.507728","50.43175","30.507728","50.43175","30.507728"
+"6","50.39285","30.635005","50.39285","30.635005","50.39285","30.635005"
 "7",null,null,null,null,null,null
 "8",null,null,null,null,null,null
 "9",null,null,null,null,null,null

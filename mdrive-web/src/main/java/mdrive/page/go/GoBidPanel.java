@@ -1,9 +1,9 @@
 package mdrive.page.go;
 
 import mdrive.app.MSession;
-import mdrive.business.dao.GeoObjectDAO;
-import mdrive.business.dao.GoBidDAO;
-import mdrive.business.dao.UserTypeDAO;
+import mdrive.business.dao.GeoObjectDao;
+import mdrive.business.dao.GoBidDao;
+import mdrive.business.dao.UserTypeDao;
 import mdrive.business.model.GoBidBean;
 import mdrive.business.model.UserBean;
 import mdrive.component.address.selection.AddressSelectionComponent;
@@ -40,13 +40,13 @@ public class GoBidPanel extends BreadCrumbPanel {
     public static final String EDITOR_ID = "editor";
 
     @SpringBean
-    UserTypeDAO userTypeDAO;
+    UserTypeDao userTypeDao;
 
     @SpringBean
-    GeoObjectDAO geoObjectDAO;
+    GeoObjectDao geoObjectDao;
 
     @SpringBean
-    GoBidDAO goBidDAO;
+    GoBidDao goBidDao;
 
     private boolean initialized;
     private Form form;
@@ -179,15 +179,15 @@ public class GoBidPanel extends BreadCrumbPanel {
 
             UserBean userBean = new UserBean();
             userBean.setUserName(MSession.get().getUser());
-            userBean.setUserTypeBean(userTypeDAO.getPassengerUserTypeBean());
+            userBean.setUserTypeBean(userTypeDao.getPassengerUserTypeBean());
             goBidBean.setUserBean(userBean);
 
-            goBidBean.setFromGeoObjectBean(geoObjectDAO
+            goBidBean.setFromGeoObjectBean(geoObjectDao
                     .findOne(fromAddressSelectionComponent.getModelObject()));
-            goBidBean.setToGeoObjectBean(geoObjectDAO
+            goBidBean.setToGeoObjectBean(geoObjectDao
                     .findOne(toAddressSelectionComponent.getModelObject()));
 
-            goBidDAO.persist(goBidBean);
+            goBidDao.persist(goBidBean);
             activate(new IBreadCrumbPanelFactory() {
                 public BreadCrumbPanel create(String componentId, IBreadCrumbModel breadCrumbModel) {
                     return new GoRepliesPanel(componentId, breadCrumbModel);

@@ -1,6 +1,6 @@
 package mdrive.component.address.selection.map;
 
-import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GeoObjectDao;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.type.GeoObjectTypeCode;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import java.util.List;
 public class MapAddressSelectionPanel extends FormComponentPanel<GeoObjectBean> {
 
     @SpringBean
-    GeoObjectDAO geoObjectDao;
+    GeoObjectDao geoObjectDao;
 
     Form form;
     AjaxCheckBox showHideTestBuildingsCheckBox;

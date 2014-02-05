@@ -1,8 +1,6 @@
 package mdrive.page;
 
-import mdrive.app.MApplication;
 import mdrive.app.MSession;
-import mdrive.business.service.DBUnitDataLoader;
 import mdrive.page.settings.DeveloperSettingsPanel;
 import mdrive.page.settings.SettingsPanel;
 import mdrive.page.signin.CustomSignInPanel;
@@ -16,7 +14,6 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.ComponentFeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +24,7 @@ import java.util.Properties;
  */
 public class HomePage extends WebPage {
 
+    private static final Logger log = Logger.getLogger(HomePage.class);
     private static final long serialVersionUID = 1L;
     private static final String APPLICATION_PROPERTIES = "app.properties";
     private static final String VERSION_PROPERTY = "app.version";
@@ -50,9 +48,6 @@ public class HomePage extends WebPage {
     private static boolean isDeveloperSettingsPanelVisible;
 
     private boolean initialized;
-
-    @SpringBean
-    DBUnitDataLoader dbUnitDataLoader;
 
     public HomePage() {
     }
@@ -169,11 +164,7 @@ public class HomePage extends WebPage {
 
             @Override
             public void doLoadTestData() {
-                try {
-                    dbUnitDataLoader.initTestDataCsv();
-                } catch (Exception e) {
-                    error(e);
-                }
+                log.info("this method not needed anymore");
             }
         };
         return panel;

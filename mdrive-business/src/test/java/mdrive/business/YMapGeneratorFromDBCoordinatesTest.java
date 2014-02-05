@@ -1,5 +1,6 @@
 package mdrive.business;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import scriptella.execution.EtlExecutor;
 import scriptella.execution.EtlExecutorException;
@@ -11,6 +12,7 @@ import scriptella.execution.EtlExecutorException;
  */
 public class YMapGeneratorFromDBCoordinatesTest {
 
+    @Ignore
     @Test
     public void generate() throws EtlExecutorException {
         EtlExecutor.newExecutor(getClass().getResource("ymaps-generator-etl.xml")).execute();

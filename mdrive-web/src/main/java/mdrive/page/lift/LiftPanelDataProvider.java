@@ -1,6 +1,6 @@
 package mdrive.page.lift;
 
-import mdrive.business.dao.GoBidDAO;
+import mdrive.business.dao.GoBidDao;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.model.GoBidBean;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortParam;
@@ -14,25 +14,24 @@ import java.util.Iterator;
  */
 public class LiftPanelDataProvider extends SortableDataProvider<GoBidBean> {
 
-    private GoBidDAO goBidDAO;
-    private GeoObjectBean geoObjectBean;
+    private GoBidDao goBidDao;
+    private GeoObjectBean searchInGeoObjectBean;
 
-    public LiftPanelDataProvider(GoBidDAO goBidDAO, GeoObjectBean geoObjectBean) {
-        this.goBidDAO = goBidDAO;
-        this.geoObjectBean = geoObjectBean;
+    public LiftPanelDataProvider(GoBidDao goBidDao, GeoObjectBean searchInGeoObjectBean) {
+        this.goBidDao = goBidDao;
+        this.searchInGeoObjectBean = searchInGeoObjectBean;
     }
 
     @Override
     public Iterator<GoBidBean> iterator(int first, int count) {
         SortParam sp = getSort();
         //TODO: Add sort parameter, fist, count
-        return goBidDAO
-                .getBidsByGeoObjectCoordinates(geoObjectBean).iterator();
+        return goBidDao.getBidsWithinGeoObjectCoordinates(searchInGeoObjectBean).iterator();
     }
 
     @Override
     public int size() {
-        return goBidDAO.findAll().size();
+        return goBidDao.findAll().size();
     }
 
     @Override

@@ -1,12 +1,13 @@
 package mdrive.business.model;
 
-import mdrive.business.helper.ToStringModelBeanHelper;
+import mdrive.business.util.ToStringModelBeanHelper;
 import org.hibernate.annotations.ForeignKey;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -23,7 +24,11 @@ import javax.persistence.Table;
                         + "and (coordinatesBean.center.latitude = null or coordinatesBean.center.longitude = null)")
 })
 @Entity
-@Table(name = GeoObjectBean.TABLE_NAME)
+@Table(name = GeoObjectBean.TABLE_NAME,
+        indexes = {
+                @Index(name = GeoObjectBean.GEO_OBJECT_TYPE_ID, columnList = GeoObjectBean.GEO_OBJECT_TYPE_ID)
+        }
+)
 public class GeoObjectBean implements ModelBean {
 
     private static final long serialVersionUID = 1L;
@@ -61,8 +66,11 @@ public class GeoObjectBean implements ModelBean {
         this.coordinatesBean = coordinatesBean;
     }
 
+
+    static final String GEO_OBJECT_TYPE_ID = "geo_object_type_id";
+
     @OneToOne
-    @JoinColumn(name = "geo_object_type_id", nullable = false)
+    @JoinColumn(name = GEO_OBJECT_TYPE_ID, nullable = false)
     @ForeignKey(name = "FK_GEO_OBJECT_TYPE")
     public GeoObjectTypeBean getGeoObjectTypeBean() {
         return geoObjectTypeBean;

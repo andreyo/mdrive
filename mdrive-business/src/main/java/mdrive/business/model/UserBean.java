@@ -1,6 +1,6 @@
 package mdrive.business.model;
 
-import mdrive.business.helper.ToStringModelBeanHelper;
+import mdrive.business.util.ToStringModelBeanHelper;
 import org.hibernate.annotations.ForeignKey;
 
 import javax.persistence.CascadeType;

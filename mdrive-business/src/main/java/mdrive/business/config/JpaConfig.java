@@ -1,12 +1,10 @@
 package mdrive.business.config;
 
 import mdrive.business.config.properties.JpaProperties;
-import mdrive.business.logic.bots.DriverBot;
-import mdrive.business.logic.bots.PassengerBot;
+import mdrive.business.service.bot.DriverBot;
+import mdrive.business.service.bot.PassengerBot;
 import mdrive.business.service.DBUnitDataExporter;
 import mdrive.business.service.DBUnitDataLoader;
-import mdrive.business.service.impl.DBUnitDataExporterImpl;
-import mdrive.business.service.impl.DBUnitDataLoaderImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,6 +19,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Created by User on 12.01.14.
@@ -67,13 +67,20 @@ public class JpaConfig {
 
 
     @Bean
-    public DBUnitDataLoader dbUnitDataLoader(DataSource dataSource) {
-        return new DBUnitDataLoaderImpl(dataSource);
+    public DBUnitDataLoader dbUnitDataLoader(DataSource dataSource) throws Exception {
+        DBUnitDataLoader dbUnitDataLoader = new DBUnitDataLoader(dataSource);
+        dbUnitDataLoader.initTestDataCsv();
+        return dbUnitDataLoader;
     }
 
     @Bean
     public DBUnitDataExporter dbUnitDataExporter() {
-        return new DBUnitDataExporterImpl();
+        return new DBUnitDataExporter();
+    }
+
+    @Bean
+    public ScheduledExecutorService scheduledExecutorService() {
+        return Executors.newSingleThreadScheduledExecutor();
     }
 
     @Bean

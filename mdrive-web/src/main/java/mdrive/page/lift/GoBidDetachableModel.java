@@ -1,6 +1,6 @@
 package mdrive.page.lift;
 
-import mdrive.business.dao.GoBidDAO;
+import mdrive.business.dao.GoBidDao;
 import mdrive.business.model.GoBidBean;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
@@ -12,7 +12,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 public class GoBidDetachableModel extends LoadableDetachableModel<GoBidBean> {
 
     @SpringBean
-    GoBidDAO goBidDAO;
+    GoBidDao goBidDao;
 
     {
         Injector.get().inject(this);
@@ -27,6 +27,6 @@ public class GoBidDetachableModel extends LoadableDetachableModel<GoBidBean> {
 
     @Override
     protected GoBidBean load() {
-        return goBidDAO.findOne(id);
+        return goBidDao.findOne(id);
     }
 }

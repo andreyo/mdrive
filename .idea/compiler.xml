@@ -24,19 +24,18 @@
         <processorPath useClasspath="true" />
         <module name="mdrive-business" />
         <module name="mdrive-geo" />
-        <module name="mdrive-report" />
         <module name="mdrive-web" />
         <module name="mojo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mdrive" target="1.6" />
-      <module name="mdrive-business" target="1.6" />
-      <module name="mdrive-geo" target="1.6" />
+      <module name="mdrive" target="1.7" />
+      <module name="mdrive-business" target="1.7" />
+      <module name="mdrive-geo" target="1.7" />
       <module name="mdrive-report" target="1.6" />
-      <module name="mdrive-web" target="1.6" />
-      <module name="mojo" target="1.6" />
-      <module name="tools" target="1.6" />
+      <module name="mdrive-web" target="1.7" />
+      <module name="mojo" target="1.7" />
+      <module name="tools" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

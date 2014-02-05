@@ -1,6 +1,6 @@
 package mdrive.page.go.replies;
 
-import mdrive.business.dao.GoReplyDAO;
+import mdrive.business.dao.GoReplyDao;
 import mdrive.business.model.GoReplyBean;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
@@ -16,7 +16,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 public class GoReplyDetachableModel extends LoadableDetachableModel<GoReplyBean> {
 
     @SpringBean
-    GoReplyDAO goReplyDAO;
+    GoReplyDao goReplyDao;
 
     {
         Injector.get().inject(this);
@@ -34,6 +34,6 @@ public class GoReplyDetachableModel extends LoadableDetachableModel<GoReplyBean>
 
     @Override
     protected GoReplyBean load() {
-        return goReplyDAO.findOne(id);
+        return goReplyDao.findOne(id);
     }
 }

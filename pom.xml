@@ -38,23 +38,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <phase>site</phase>
-                        <goals>
-                            <goal>pmd</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <targetJdk>${targetJdk}</targetJdk>
-                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.1</version>
                 <configuration>
@@ -293,7 +276,7 @@
     </dependencyManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <targetJdk>1.6</targetJdk>
+        <targetJdk>1.7</targetJdk>
         <org.springframework.version>4.0.0.RELEASE</org.springframework.version>
         <org.springframework.security.version>3.1.0.RELEASE</org.springframework.security.version>
     </properties>

@@ -1,9 +1,9 @@
 package mdrive.business;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.GeoObjectDAO;
-import mdrive.business.dao.GeoObjectTypeDAO;
-import mdrive.business.helper.Translit;
+import mdrive.business.dao.GeoObjectDao;
+import mdrive.business.dao.GeoObjectTypeDao;
+import mdrive.business.util.Translit;
 import mdrive.business.model.CoordinatesBean;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.model.GeoObjectTypeBean;
@@ -16,6 +16,7 @@ import net.opengis.gml.FeatureMemberType;
 import net.opengis.gml.MetaDataPropertyType;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,7 @@ CREATE TABLE COORDINATES_LOG (
 )
 
  */
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaTestConfig.class)
 public class StreetsCoordinatesResolverTest {
@@ -72,10 +74,10 @@ public class StreetsCoordinatesResolverTest {
     DataSource mysqlDataSource;
 
     @Autowired
-    GeoObjectDAO geoObjectDAO;
+    GeoObjectDao geoObjectDao;
 
     @Autowired
-    GeoObjectTypeDAO geoObjectTypeDAO;
+    GeoObjectTypeDao geoObjectTypeDao;
 
     @Rollback(false)
     @Test
@@ -85,16 +87,16 @@ public class StreetsCoordinatesResolverTest {
         String resolvedBuildings = "";
         Long resolvedBuildingsNumber = 0L;
         String notResolvedBuildings = "";
-        geoObjectDAO.setAutoFlush(false);
+        geoObjectDao.setAutoFlush(false);
 
         //Get Next Street To Work On
         Long streetId = getNextStreetId();
-        GeoObjectBean streetBean = geoObjectDAO.findOne(streetId);
+        GeoObjectBean streetBean = geoObjectDao.findOne(streetId);
         String streetNameUk = streetBean.getObjectI18Name().getValue(Constants.LOCALE_UK);
         //write to log at the beginning, to prevent infinite loop on error
-        writeDBLog(streetBean.getId(), "start", "start", 0L, 0L, Translit.toTranslit(streetNameUk));
+        writeDBLog(streetBean.getId(), "start", "start", 0L, 0L, Translit.translitRusUkr2En(streetNameUk));
         //Get Buildings Of That Street
-        List<GeoObjectBean> buildingBeans = geoObjectDAO.getBuildingsByStreetId(streetBean.getId());
+        List<GeoObjectBean> buildingBeans = geoObjectDao.getBuildingsByStreetId(streetBean.getId());
         try {
             for (GeoObjectBean buildingBean : buildingBeans) {
                 String buildingNameUk = buildingBean.getObjectI18Name().getValue(Constants.LOCALE_UK);
@@ -117,15 +119,15 @@ public class StreetsCoordinatesResolverTest {
             log.error(e);
         }
         //save results
-        geoObjectDAO.persist(buildingBeans);
+        geoObjectDao.persist(buildingBeans);
         //
-        Long totalBuildingsLeft = geoObjectDAO.getTotalUnresolvedBuildingsLeft();
+        Long totalBuildingsLeft = geoObjectDao.getTotalUnresolvedBuildingsLeft();
         writeDBLog(streetBean.getId(),
                 resolvedBuildings,
                 notResolvedBuildings,
                 resolvedBuildingsNumber,
                 totalBuildingsLeft,
-                Translit.toTranslit(streetNameUk));
+                Translit.translitRusUkr2En(streetNameUk));
     }
 
     //select streets by type_id and maximum street id in LOG table
@@ -226,7 +228,7 @@ public class StreetsCoordinatesResolverTest {
             buildingBean.getCoordinatesBean().setUpperRight(new Point(upperRight));
 
             //process CITY_AREA
-            if (cityAreaGO == null || !geoObjectDAO.isManaged(cityAreaGO)) {
+            if (cityAreaGO == null || !geoObjectDao.isManaged(cityAreaGO)) {
                 String addressText = geoObjectType.getMetaDataProperty().getGeocoderMetaData().getText();
                 cityAreaGO = getOrCreateCityAreaGeoObject(getCityAreaName(addressText));
             }
@@ -245,14 +247,14 @@ public class StreetsCoordinatesResolverTest {
     //search for existing City-Area before creating new one
     private GeoObjectBean getOrCreateCityAreaGeoObject(String cityAreaName) {
         //get type bean
-        if (cityAreaGeoObjectTypeBean == null || !geoObjectTypeDAO.isManaged(cityAreaGeoObjectTypeBean)) {
-            cityAreaGeoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.CITY_AREA);
+        if (cityAreaGeoObjectTypeBean == null || !geoObjectTypeDao.isManaged(cityAreaGeoObjectTypeBean)) {
+            cityAreaGeoObjectTypeBean = geoObjectTypeDao.findByTypeCode(GeoObjectTypeCode.CITY_AREA);
         }
         // search in DB first
         GeoObjectBean cityAreaGO = new GeoObjectBean();
         cityAreaGO.setGeoObjectTypeBean(cityAreaGeoObjectTypeBean);
-        cityAreaGO.setObjectI18Name(new I18NameBean(Translit.toTranslit(cityAreaName), "", cityAreaName));
-        List<GeoObjectBean> cityAreasList = geoObjectDAO
+        cityAreaGO.setObjectI18Name(new I18NameBean(Translit.translitRusUkr2En(cityAreaName), "", cityAreaName));
+        List<GeoObjectBean> cityAreasList = geoObjectDao
                 .getGeoObjectsByTypeAndParentAndPrefix(GeoObjectTypeCode.CITY_AREA,
                         null,
                         cityAreaName,
@@ -267,7 +269,7 @@ public class StreetsCoordinatesResolverTest {
             cityAreaGO.setCoordinatesBean(coordinatesBean);
             //city and country will be created later
             cityAreaGO.setParentGeoObjectBean(null);
-            geoObjectDAO.persist(cityAreaGO);
+            geoObjectDao.persist(cityAreaGO);
             return cityAreaGO;
         }
     }

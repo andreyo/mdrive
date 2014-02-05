@@ -1,7 +1,7 @@
 package mdrive.business.model;
 
 import mdrive.business.model.embeddable.Point;
-import mdrive.business.helper.ToStringModelBeanHelper;
+import mdrive.business.util.ToStringModelBeanHelper;
 
 import javax.persistence.*;
 

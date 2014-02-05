@@ -1,8 +1,7 @@
 package mdrive.page.lift;
 
-import mdrive.app.MApplication;
 import mdrive.app.MSession;
-import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GeoObjectDao;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.component.autocompletegeo.AutoCompleteStreetBuildingPanel;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -39,7 +38,7 @@ public class MyLocationPanel extends FormComponentPanel {
     private AutoCompleteStreetBuildingPanel autoCompleteStreetBuildingPanel;
     
     @SpringBean
-    GeoObjectDAO geoObjectDAO;
+    GeoObjectDao geoObjectDao;
 
     public MyLocationPanel(String id) {
         super(id);
@@ -90,11 +89,11 @@ public class MyLocationPanel extends FormComponentPanel {
     }
 
     public String getCurrentLocationLinkLabel() {
-        GeoObjectBean streetBean = geoObjectDAO
+        GeoObjectBean streetBean = geoObjectDao
                 .getFullGeoObjectBeanById(MSession.get().getUserLocationStreetId());
         String streetName = streetBean.getObjectI18Name().getValue();
 
-        GeoObjectBean buildingBean = geoObjectDAO
+        GeoObjectBean buildingBean = geoObjectDao
                 .getFullGeoObjectBeanById(MSession.get().getUserLocationBuildingId());
         String buildingName = buildingBean.getObjectI18Name().getValue();
 

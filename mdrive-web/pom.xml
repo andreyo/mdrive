@@ -66,7 +66,7 @@
                                     <!--<classifier>[classifier - optional]</classifier>-->
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.outputDirectory}</outputDirectory>
-                                    <includes>csv_initial_db/*.*</includes>
+                                    <includes>csv_initial_db_full/*.*</includes>
                                     <excludes></excludes>
                                 </artifactItem>
                             </artifactItems>
@@ -251,7 +251,6 @@
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <targetJdk>1.6</targetJdk>
         <org.apache.wicket.version>1.5.3</org.apache.wicket.version>
         <jetty.version>6.1.4</jetty.version>
         <org.hsqldb.version>1.8.0.10</org.hsqldb.version>

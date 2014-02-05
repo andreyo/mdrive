@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/mdrive.iml" filepath="$PROJECT_DIR$/mdrive.iml" />
       <module fileurl="file://$PROJECT_DIR$/mdrive-business/mdrive-business.iml" filepath="$PROJECT_DIR$/mdrive-business/mdrive-business.iml" />
       <module fileurl="file://$PROJECT_DIR$/mdrive-geo/mdrive-geo.iml" filepath="$PROJECT_DIR$/mdrive-geo/mdrive-geo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mdrive-report/mdrive-report.iml" filepath="$PROJECT_DIR$/mdrive-report/mdrive-report.iml" />
       <module fileurl="file://$PROJECT_DIR$/mdrive-web/mdrive-web.iml" filepath="$PROJECT_DIR$/mdrive-web/mdrive-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/tools/mojo/mojo.iml" filepath="$PROJECT_DIR$/tools/mojo/mojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/tools/tools.iml" filepath="$PROJECT_DIR$/tools/tools.iml" />

@@ -1,17 +1,14 @@
 package mdrive.business.dao.impl;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.SettingsDAO;
-import mdrive.business.dao.UserDAO;
+import mdrive.business.dao.SettingsDao;
+import mdrive.business.dao.UserDao;
 import mdrive.business.model.SettingsBean;
 import mdrive.business.model.UserBean;
 import mdrive.business.service.DBUnitDataExporter;
-import mdrive.business.service.DBUnitDataLoader;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -30,28 +27,19 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration(classes = JpaTestConfig.class)
 @Transactional
 //@TransactionConfiguration(defaultRollback = false)
-public class SettingsDAOImplTest {
+public class SettingsDaoImplTest {
 
     @Autowired
-    private SettingsDAO settingsDAO;
+    private SettingsDao settingsDao;
 
     @Autowired
-    private UserDAO userDAO;
-
-    @Autowired
-    private DBUnitDataLoader dbUnitDataLoader;
+    private UserDao userDao;
 
     @Autowired
     private DBUnitDataExporter dbUnitDataExporter;
 
-    @Before
-    public void init() throws Exception {
-        //initialize each test manually
-    }
 
     public void addElementCollection() throws Exception {
-        dbUnitDataLoader.initTestData();
-
         SettingsBean settingsBean = new SettingsBean();
         settingsBean.getRecentLocations().add("florida");
         settingsBean.getRecentLocations().add("washington");
@@ -62,11 +50,11 @@ public class SettingsDAOImplTest {
         settingsBean.getStatistics().put(3, "70");
 
         //set user
-        UserBean userBean = userDAO.findOne(1L);
+        UserBean userBean = userDao.findOne(1L);
         userBean.setSettingsBean(settingsBean);
         settingsBean.setUserBean(userBean);
 
-        userDAO.persist(userBean);
+        userDao.persist(userBean);
     }
 
     @Test
@@ -75,7 +63,7 @@ public class SettingsDAOImplTest {
 
         dbUnitDataExporter.exportTables("settings_export.xml");
 
-        UserBean userBean = userDAO.findOne(1L);
+        UserBean userBean = userDao.findOne(1L);
         assertEquals(userBean.getId(), userBean.getSettingsBean().getUserBean().getId());
     }
 

@@ -1,17 +1,14 @@
 package mdrive.business.dao.impl;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.GeoObjectDAO;
-import mdrive.business.dao.GoBidDAO;
-import mdrive.business.dao.UserDAO;
-import mdrive.business.dao.UserTypeDAO;
-import mdrive.business.model.GeoObjectBean;
+import mdrive.business.dao.GeoObjectDao;
+import mdrive.business.dao.GoBidDao;
+import mdrive.business.dao.UserDao;
+import mdrive.business.dao.UserTypeDao;
 import mdrive.business.model.GoBidBean;
 import mdrive.business.model.GoReplyBean;
 import mdrive.business.model.UserBean;
 import mdrive.business.service.DBUnitDataExporter;
-import mdrive.business.service.DBUnitDataLoader;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +21,6 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -33,22 +29,19 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaTestConfig.class)
 @Transactional
-public class GoBidDAOImplTest {
+public class GoBidDaoImplTest {
 
     @Autowired
-    private GoBidDAO goBidDAO;
+    private GoBidDao goBidDao;
 
     @Autowired
-    private UserDAO userDAO;
+    private UserDao userDao;
 
     @Autowired
-    private UserTypeDAO userTypeDAO;
+    private UserTypeDao userTypeDao;
 
     @Autowired
-    private GeoObjectDAO geoObjectDAO;
-
-    @Autowired
-    private DBUnitDataLoader dbUnitDataLoader;
+    private GeoObjectDao geoObjectDao;
 
     @Autowired
     private DBUnitDataExporter dbUnitDataExporter;
@@ -56,28 +49,9 @@ public class GoBidDAOImplTest {
     @PersistenceContext
     EntityManager entityManager;
 
-    @Before
-    public void init() throws Exception {
-        dbUnitDataLoader.initTestDataXml();
-    }
-
-    @Test
-    public void getBidsByGeoObjectCoordinates() throws Exception {
-        for (GoBidBean goBidBean : goBidDAO.getBidsByGeoObjectCoordinates(new GeoObjectBean())) {
-            //verify that initialized
-            assertNotNull(goBidBean.getFromGeoObjectBean().getObjectI18Name());
-            assertNotNull(goBidBean.getFromGeoObjectBean().getParentGeoObjectBean().getObjectI18Name());
-
-            assertNotNull(goBidBean.getToGeoObjectBean().getObjectI18Name());
-            assertNotNull(goBidBean.getToGeoObjectBean().getParentGeoObjectBean().getObjectI18Name());
-
-            System.out.println(goBidBean);
-        }
-    }
-
     @Test
     public void getGoReplies() throws Exception {
-        GoBidBean goBidBean = goBidDAO.findOne(1000001L);
+        GoBidBean goBidBean = goBidDao.findOne(1000001L);
         assertTrue(goBidBean.getGoReplies().size() > 0);
         for (GoReplyBean goReplyBean : goBidBean.getGoReplies()) {
             System.out.println(goReplyBean);
@@ -89,37 +63,37 @@ public class GoBidDAOImplTest {
     public void createGoBidBean() throws Exception {
         GoBidBean goBidBean = new GoBidBean();
         UserBean userBean = new UserBean();
-        userBean.setUserTypeBean(userTypeDAO.getPassengerUserTypeBean());
+        userBean.setUserTypeBean(userTypeDao.getPassengerUserTypeBean());
         userBean.setUserName("goga");
-        userDAO.persist(userBean);
+        userDao.persist(userBean);
         goBidBean.setUserBean(userBean);
-        goBidBean.setFromGeoObjectBean(geoObjectDAO.findOne(5L));
-        goBidBean.setToGeoObjectBean(geoObjectDAO.findOne(5L));
-        goBidDAO.persist(goBidBean);
+        goBidBean.setFromGeoObjectBean(geoObjectDao.findOne(5L));
+        goBidBean.setToGeoObjectBean(geoObjectDao.findOne(5L));
+        goBidDao.persist(goBidBean);
     }
 
     @Test
     @Rollback(false)
     public void test1() throws Exception {
         UserBean userBean = new UserBean();
-        userBean.setUserTypeBean(userTypeDAO.getPassengerUserTypeBean());
+        userBean.setUserTypeBean(userTypeDao.getPassengerUserTypeBean());
         userBean.setUserName("goga");
-        userDAO.persist(userBean);
+        userDao.persist(userBean);
 
         GoBidBean goBidBean1 = new GoBidBean();
         goBidBean1.setUserBean(userBean);
-        goBidBean1.setFromGeoObjectBean(geoObjectDAO.findOne(5L));
-        goBidBean1.setToGeoObjectBean(geoObjectDAO.findOne(5L));
+        goBidBean1.setFromGeoObjectBean(geoObjectDao.findOne(5L));
+        goBidBean1.setToGeoObjectBean(geoObjectDao.findOne(5L));
 
         GoBidBean goBidBean2 = new GoBidBean();
         goBidBean2.setUserBean(userBean);
-        goBidBean2.setFromGeoObjectBean(geoObjectDAO.findOne(5L));
-        goBidBean2.setToGeoObjectBean(geoObjectDAO.findOne(5L));
+        goBidBean2.setFromGeoObjectBean(geoObjectDao.findOne(5L));
+        goBidBean2.setToGeoObjectBean(geoObjectDao.findOne(5L));
 
 
-        goBidDAO.persist(goBidBean1);
-        goBidDAO.persist(goBidBean2);
-        goBidDAO.delete(goBidBean2);
+        goBidDao.persist(goBidBean1);
+        goBidDao.persist(goBidBean2);
+        goBidDao.delete(goBidBean2);
         entityManager.flush();
 
         dbUnitDataExporter.exportTables("");

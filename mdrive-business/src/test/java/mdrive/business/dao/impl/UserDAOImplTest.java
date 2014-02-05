@@ -1,12 +1,10 @@
 package mdrive.business.dao.impl;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.I18NameDAO;
-import mdrive.business.dao.UserDAO;
+import mdrive.business.dao.I18NameDao;
+import mdrive.business.dao.UserDao;
 import mdrive.business.model.GoBidBean;
 import mdrive.business.model.GoReplyBean;
-import mdrive.business.service.DBUnitDataLoader;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,25 +24,17 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaTestConfig.class)
 @Transactional
-public class UserDAOImplTest {
+public class UserDaoImplTest {
 
     @Autowired
-    private UserDAO userDAO;
+    private UserDao userDao;
 
     @Autowired
-    private I18NameDAO i18NameDAO;
-
-    @Autowired
-    private DBUnitDataLoader dbUnitDataLoader;
-
-    @Before
-    public void init() throws Exception {
-        dbUnitDataLoader.initTestDataXml();
-    }
+    private I18NameDao i18NameDao;
 
     @Test
     public void getGoBids() {
-        List<GoBidBean> goBids = userDAO.findOne(1L).getGoBids();
+        List<GoBidBean> goBids = userDao.findOne(1L).getGoBids();
         for (GoBidBean goBid : goBids) {
             System.out.println(goBid);
         }
@@ -52,7 +42,7 @@ public class UserDAOImplTest {
 
     @Test
     public void getGoReplies() {
-        List<GoReplyBean> goReplies = userDAO.findOne(2L).getGoReplies();
+        List<GoReplyBean> goReplies = userDao.findOne(2L).getGoReplies();
         for (GoReplyBean goReply : goReplies) {
             System.out.println(goReply);
         }

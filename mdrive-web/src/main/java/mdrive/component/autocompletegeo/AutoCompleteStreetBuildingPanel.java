@@ -1,7 +1,6 @@
 package mdrive.component.autocompletegeo;
 
-import mdrive.app.MApplication;
-import mdrive.business.dao.GeoObjectDAO;
+import mdrive.business.dao.GeoObjectDao;
 import mdrive.business.model.GeoObjectBean;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.FormComponentPanel;
@@ -28,7 +27,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
     private boolean initialized;
 
     @SpringBean
-    GeoObjectDAO geoObjectDAO;
+    GeoObjectDao geoObjectDao;
 
     public AutoCompleteStreetBuildingPanel(String id) {
         this(id, new Model<Long>());
@@ -52,7 +51,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
             Long newBuildingId = getModelObject();
             if (newBuildingId != null && !newBuildingId
                     .equals(buildingAutoCompleteGeoObjectTextField.getSelectedObjectId())) {
-                GeoObjectBean buildingGeoObject = geoObjectDAO
+                GeoObjectBean buildingGeoObject = geoObjectDao
                         .getFullGeoObjectBeanById(newBuildingId);
                 if (buildingGeoObject == null) {
                     error("invalid building id: " + newBuildingId);
@@ -64,7 +63,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
                 //if building has another street - change it as well
                 Long newStreetId = buildingGeoObject.getParentGeoObjectBean().getId();
                 if (!newStreetId.equals(streetAutoCompleteGeoObjectTextField.getSelectedObjectId())) {
-                    GeoObjectBean streetGeoObject = geoObjectDAO
+                    GeoObjectBean streetGeoObject = geoObjectDao
                             .getFullGeoObjectBeanById(newStreetId);
                     if (streetGeoObject == null) {
                         error("invalid street id: " + newStreetId);
@@ -86,7 +85,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
         streetAutoCompleteGeoObjectTextField = new AutoCompleteGeoObjectTextField("street") {
             @Override
             public Iterator<GeoObjectBean> getChoices(String input) {
-                List<GeoObjectBean> choices = geoObjectDAO
+                List<GeoObjectBean> choices = geoObjectDao
                         .getStreetGeoObjectsStartingWith(input, getLocale(), AUTOCOMPLETE_ITEMS_LIMIT);
                 return choices.iterator();
             }
@@ -101,7 +100,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
         buildingAutoCompleteGeoObjectTextField = new AutoCompleteGeoObjectTextField("building") {
             @Override
             public Iterator<GeoObjectBean> getChoices(String input) {
-                List<GeoObjectBean> choices = geoObjectDAO.getBuildingGeoObjectsStartingWith(
+                List<GeoObjectBean> choices = geoObjectDao.getBuildingGeoObjectsStartingWith(
                         input,
                         getLocale(),
                         getSelectedStreetId(),

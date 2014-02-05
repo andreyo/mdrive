@@ -1,12 +1,10 @@
 package mdrive.business.dao.impl;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.I18NameDAO;
-import mdrive.business.dao.UserTypeDAO;
+import mdrive.business.dao.I18NameDao;
+import mdrive.business.dao.UserTypeDao;
 import mdrive.business.model.I18NameBean;
 import mdrive.business.model.UserTypeBean;
-import mdrive.business.service.DBUnitDataLoader;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,25 +26,17 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaTestConfig.class)
 @Transactional
-public class UserTypeDAOImplTest {
+public class UserTypeDaoImplTest {
 
     @Autowired
-    private UserTypeDAO userTypeDAO;
+    private UserTypeDao userTypeDao;
 
     @Autowired
-    private I18NameDAO i18NameDAO;
-
-    @Autowired
-    private DBUnitDataLoader dbUnitDataLoader;
-
-    @Before
-    public void init() throws Exception {
-        dbUnitDataLoader.initTestData();
-    }
+    private I18NameDao i18NameDao;
 
     @Test
     public void findAll() {
-        for (UserTypeBean userTypeBean : userTypeDAO.findAll()) {
+        for (UserTypeBean userTypeBean : userTypeDao.findAll()) {
             System.out.println("typeName = " + userTypeBean.getTypeI18Name().getValue());
             System.out.println(userTypeBean);
         }
@@ -55,20 +45,20 @@ public class UserTypeDAOImplTest {
     @Test
     public void create_save() {
         I18NameBean i18NameBean = new I18NameBean("egnlish name", "русское имя", "украинское имя");
-        i18NameDAO.persist(i18NameBean);
+        i18NameDao.persist(i18NameBean);
         UserTypeBean userTypeBean = new UserTypeBean();
         userTypeBean.setTypeI18Name(i18NameBean);
-        userTypeDAO.persist(userTypeBean);
-        UserTypeBean retrievedUserTypeBean = userTypeDAO.findOne(userTypeBean.getId());
+        userTypeDao.persist(userTypeBean);
+        UserTypeBean retrievedUserTypeBean = userTypeDao.findOne(userTypeBean.getId());
         assertEquals(userTypeBean, retrievedUserTypeBean);
         System.out.println("retrievedUserTypeBean = " + retrievedUserTypeBean);
     }
 
     @Test
     public void getPassengerDriver() {
-        UserTypeBean passengerUserType = userTypeDAO.getPassengerUserTypeBean();
+        UserTypeBean passengerUserType = userTypeDao.getPassengerUserTypeBean();
         assertNotNull(passengerUserType);
-        UserTypeBean driverUserType = userTypeDAO.getDriverUserTypeBean();
+        UserTypeBean driverUserType = userTypeDao.getDriverUserTypeBean();
         assertNotNull(driverUserType);
     }
 }

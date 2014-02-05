@@ -1,6 +1,6 @@
 package mdrive.page.go.replies;
 
-import mdrive.business.dao.GoReplyDAO;
+import mdrive.business.dao.GoReplyDao;
 import mdrive.business.model.GoReplyBean;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortParam;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvider;
@@ -20,7 +20,7 @@ import java.util.Iterator;
 public class GoReplySortableDataProvider extends SortableDataProvider<GoReplyBean> {
 
     @SpringBean
-    GoReplyDAO goReplyDAO;
+    GoReplyDao goReplyDao;
 
     {
         Injector.get().inject(this);
@@ -33,12 +33,12 @@ public class GoReplySortableDataProvider extends SortableDataProvider<GoReplyBea
     public Iterator<GoReplyBean> iterator(int first, int count) {
         SortParam sp = getSort();
         //TODO: implement pagination properly
-        return goReplyDAO.findAll().iterator();
+        return goReplyDao.findAll().iterator();
     }
 
     @Override
     public int size() {
-        return goReplyDAO.findAll().size();
+        return goReplyDao.findAll().size();
     }
 
     @Override

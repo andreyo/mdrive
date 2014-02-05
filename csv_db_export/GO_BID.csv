@@ -1,0 +1,4 @@
+ID, BAGGAGE, COMMENT, NUMBEROFPEOPLE, PRICE, TIME_WAIT, FROM_GEO_OBJECT_ID, TO_GEO_OBJECT_ID, USER_ID, VIA_GEO_OBJECT_ID
+"1000001","","","","","20","1","2","1",null
+"1000002","","","","30","","4","2","3","1"
+"1000003",null,null,null,null,null,"5","5","5",null

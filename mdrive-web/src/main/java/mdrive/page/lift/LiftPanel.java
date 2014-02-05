@@ -1,6 +1,6 @@
 package mdrive.page.lift;
 
-import mdrive.business.dao.GoBidDAO;
+import mdrive.business.dao.GoBidDao;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.model.GoBidBean;
 import mdrive.page.lift.filter.SelectFilterPanel;
@@ -29,7 +29,7 @@ public class LiftPanel extends BreadCrumbPanel {
     private static final int ITEMS_PER_PAGE = 8;
 
     @SpringBean
-    private GoBidDAO goBidDAO;
+    private GoBidDao goBidDao;
 
     private boolean initialized;
 
@@ -85,7 +85,7 @@ public class LiftPanel extends BreadCrumbPanel {
     //TODO: add filters: 1) by radius 2) by tariff 3) by time
     private class InputForm extends Form {
         //Search bids in coordinates rectangle of searchInGeoObjectBean
-        private GeoObjectBean searchInGeoObjectBean = new GeoObjectBean();
+        private GeoObjectBean searchInGeoObjectBean = createSearchInGeoObjectBean();
 
         InputForm(String id) {
             super(id);
@@ -142,7 +142,11 @@ public class LiftPanel extends BreadCrumbPanel {
         }
 
         private LiftPanelDataProvider getDataProvider() {
-            return new LiftPanelDataProvider(goBidDAO, searchInGeoObjectBean);
+            return new LiftPanelDataProvider(goBidDao, searchInGeoObjectBean);
         }
+    }
+
+    private GeoObjectBean createSearchInGeoObjectBean() {
+        return new GeoObjectBean();
     }
 }

@@ -1,11 +1,9 @@
 package mdrive.business.dao.impl;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.GeoObjectTypeDAO;
+import mdrive.business.dao.GeoObjectTypeDao;
 import mdrive.business.model.GeoObjectTypeBean;
-import mdrive.business.service.DBUnitDataLoader;
 import mdrive.business.type.GeoObjectTypeCode;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +16,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * GeoObjectTypeDAOImpl Tester.
+ * GeoObjectTypeDao Tester.
  *
  * @author <Authors name>
  * @version 1.0
@@ -27,22 +25,14 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaTestConfig.class)
 @Transactional
-public class GeoObjectTypeDAOImplTest {
+public class GeoObjectTypeDaoImplTest {
 
     @Autowired
-    GeoObjectTypeDAO geoObjectTypeDAO;
-
-    @Autowired
-    private DBUnitDataLoader dbUnitDataLoader;
-
-    @Before
-    public void init() throws Exception {
-        dbUnitDataLoader.initTestData();
-    }
+    GeoObjectTypeDao geoObjectTypeDao;
 
     @Test
     public void get() {
-        List<GeoObjectTypeBean> geoObjectTypeBeanList = geoObjectTypeDAO.findAll();
+        List<GeoObjectTypeBean> geoObjectTypeBeanList = geoObjectTypeDao.findAll();
         for (GeoObjectTypeBean geoObjectTypeBean : geoObjectTypeBeanList) {
             System.out.println(geoObjectTypeBean);
         }
@@ -50,7 +40,7 @@ public class GeoObjectTypeDAOImplTest {
 
     @Test
     public void findByTypeCode() {
-        GeoObjectTypeBean geoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.STREET);
+        GeoObjectTypeBean geoObjectTypeBean = geoObjectTypeDao.findByTypeCode(GeoObjectTypeCode.STREET);
         assertEquals(GeoObjectTypeCode.STREET, geoObjectTypeBean.getTypeCode());
     }
 }

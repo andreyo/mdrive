@@ -1,6 +1,6 @@
 package mdrive.page.settings;
 
-import mdrive.business.logic.bots.PassengerBot;
+import mdrive.business.service.bot.PassengerBot;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
 import org.apache.wicket.markup.html.basic.Label;
@@ -62,7 +62,7 @@ public abstract class DeveloperSettingsPanel extends Panel {
             Label label = new Label(componentId, new Model<String>() {
                 @Override
                 public String getObject() {
-                    if (passengerBot.isActive()) {
+                    if (passengerBot.isOn()) {
                         return getString("passengerBotLinkStopLabel");
                     } else {
                         return getString("passengerBotLinkStartLabel");
@@ -79,7 +79,7 @@ public abstract class DeveloperSettingsPanel extends Panel {
 
             @Override
             public void onClick(AjaxRequestTarget ajaxRequestTarget) {
-                passengerBot.setActive(!passengerBot.isActive());
+                passengerBot.setOn(!passengerBot.isOn());
                 if (ajaxRequestTarget != null) {
                     ajaxRequestTarget.add(passengerBotLink);
                 }

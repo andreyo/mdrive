@@ -1,13 +1,17 @@
 package mdrive.business.dao;
 
 import mdrive.business.model.I18NameBean;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Elena
  * Date: 11.01.2011
- * Time: 8:23:42
+ * Time: 8:25:52
  * To change this template use File | Settings | File Templates.
  */
-public interface I18NameDAO extends GenericDao<I18NameBean> {
+@Transactional
+@Component
+public class I18NameDao extends GenericDao<I18NameBean> {
 }

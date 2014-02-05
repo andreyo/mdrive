@@ -1,8 +1,8 @@
 package mdrive.business;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.dao.GeoObjectDAO;
-import mdrive.business.dao.GeoObjectTypeDAO;
+import mdrive.business.dao.GeoObjectDao;
+import mdrive.business.dao.GeoObjectTypeDao;
 import mdrive.business.model.CoordinatesBean;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.model.GeoObjectTypeBean;
@@ -14,9 +14,11 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -31,6 +33,7 @@ import java.util.List;
  * Date: 7/25/11
  * Time: 4:19 PM
  */
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaTestConfig.class)
 public class ExcelToModelConverter {
@@ -41,10 +44,10 @@ public class ExcelToModelConverter {
     private GeoObjectTypeBean buildingGeoObjectTypeBean;
 
     @Autowired
-    GeoObjectDAO geoObjectDAO;
+    GeoObjectDao geoObjectDao;
 
     @Autowired
-    GeoObjectTypeDAO geoObjectTypeDAO;
+    GeoObjectTypeDao geoObjectTypeDao;
 
     @Autowired
     DBUnitDataLoader dbUnitDataLoader;
@@ -53,10 +56,9 @@ public class ExcelToModelConverter {
     DBUnitDataExporter dbUnitDataExporter;
 
     @Test
-    //uncomment this to see results in export()
-//    @Rollback(false)
+    @Rollback(false)
     public void doReadGeoObjectsAndPersist2DB() throws Exception {
-        geoObjectDAO.setAutoFlush(false);
+        geoObjectDao.setAutoFlush(false);
         dbUnitDataLoader.initTestDataXml("initialdb_dictionary.xml");//insert dictionaries
 //        readGeoObjectsAndPersist2DB("streets.xls", 0, 2086);
         readGeoObjectsAndPersist2DB("streets.xls", 0, 3);
@@ -98,9 +100,9 @@ public class ExcelToModelConverter {
             }
             //do not skip strets without buildings
             if (buildingGOList.size() != 0) {
-                geoObjectDAO.persist(buildingGOList);
+                geoObjectDao.persist(buildingGOList);
             } else {
-                geoObjectDAO.persist(currentStreetGeoObject);
+                geoObjectDao.persist(currentStreetGeoObject);
             }
 
         }
@@ -115,8 +117,8 @@ public class ExcelToModelConverter {
     private GeoObjectBean createStreetGeoObject(String streetName) {
         GeoObjectBean streetGO = new GeoObjectBean();
         //to select once, instead of every time
-        if (streetGeoObjectTypeBean == null || !geoObjectTypeDAO.isManaged(streetGeoObjectTypeBean)) {
-            streetGeoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.STREET);
+        if (streetGeoObjectTypeBean == null || !geoObjectTypeDao.isManaged(streetGeoObjectTypeBean)) {
+            streetGeoObjectTypeBean = geoObjectTypeDao.findByTypeCode(GeoObjectTypeCode.STREET);
         }
         streetGO.setGeoObjectTypeBean(streetGeoObjectTypeBean);
         //empty coordinates, will be resolved later
@@ -139,8 +141,8 @@ public class ExcelToModelConverter {
     private GeoObjectBean createBuildingGeoObject(String buildingName, GeoObjectBean streetGeoObject) {
         GeoObjectBean buildingGO = new GeoObjectBean();
         //to select once, instead of every time
-        if (buildingGeoObjectTypeBean == null || !geoObjectTypeDAO.isManaged(buildingGeoObjectTypeBean)) {
-            buildingGeoObjectTypeBean = geoObjectTypeDAO.findByTypeCode(GeoObjectTypeCode.BUILDING);
+        if (buildingGeoObjectTypeBean == null || !geoObjectTypeDao.isManaged(buildingGeoObjectTypeBean)) {
+            buildingGeoObjectTypeBean = geoObjectTypeDao.findByTypeCode(GeoObjectTypeCode.BUILDING);
         }
         buildingGO.setGeoObjectTypeBean(buildingGeoObjectTypeBean);
         //empty coordinates, will be resolved later
