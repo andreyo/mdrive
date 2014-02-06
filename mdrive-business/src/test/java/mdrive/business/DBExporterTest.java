@@ -6,7 +6,7 @@ import mdrive.business.dao.GeoObjectTypeDao;
 import mdrive.business.model.CoordinatesBean;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.model.I18NameBean;
-import mdrive.business.service.DBUnitDataExporter;
+import mdrive.business.util.DBUnitDataExporter;
 import mdrive.business.type.GeoObjectTypeCode;
 import org.junit.Ignore;
 import org.junit.Test;

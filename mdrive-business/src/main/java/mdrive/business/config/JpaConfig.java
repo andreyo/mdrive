@@ -3,8 +3,8 @@ package mdrive.business.config;
 import mdrive.business.config.properties.JpaProperties;
 import mdrive.business.service.bot.DriverBot;
 import mdrive.business.service.bot.PassengerBot;
-import mdrive.business.service.DBUnitDataExporter;
-import mdrive.business.service.DBUnitDataLoader;
+import mdrive.business.util.DBUnitDataExporter;
+import mdrive.business.util.DBUnitDataLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,7 +26,7 @@ import java.util.concurrent.ScheduledExecutorService;
  * Created by User on 12.01.14.
  */
 @Configuration
-@ComponentScan("mdrive.business.dao")
+@ComponentScan("mdrive.business")
 @Import(PropertiesConfig.class)
 @EnableTransactionManagement
 public class JpaConfig {

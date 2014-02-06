@@ -112,10 +112,12 @@ public class GeoObjectDaoImplTest {
 
     @Test
     public void getGeoObjectsByLocation() throws Exception {
-        final List<GeoObjectBean> geoObjectsByLocationList = geoObjectDao.getGeoObjectsByLocation(Float.valueOf(0),
-                Float.valueOf(0),
-                Float.valueOf(100),
-                GeoObjectTypeCode.STREET);
+        final List<GeoObjectBean> geoObjectsByLocationList = geoObjectDao.getGeoObjectsByLocationAndRadius(
+                50f,
+                30f,
+                0.51f,
+                GeoObjectTypeCode.BUILDING,
+                10);
         assertNotNull(geoObjectsByLocationList);
         assertTrue(geoObjectsByLocationList.size() > 0);
         for (GeoObjectBean geoObjectBean : geoObjectsByLocationList) {

@@ -4,104 +4,24 @@
     <bookmark url="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GoBidBean.java" line="52" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c9a6a01-6cb1-445d-97b1-aeec35ec2caa" name="Default" comment="web works">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/DAOTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GenericDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/I18NameDaoImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/OnOffCallable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/Translit.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/CoordinatesDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GenericDao.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\GenericDaoImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\GeoObjectDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\GeoObjectTypeDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\GoBidDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\GoReplyDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\I18NameDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\SettingsDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\UserDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\UserTypeDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\helper\Translit.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\logic\bots\EternalOnOffThread.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\logic\bots\PassengerBot.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectTypeDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectTypeDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoBidDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoBidDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoReplyDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoReplyDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/I18NameDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/I18NameDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/SettingsDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/SettingsDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserTypeDao.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserTypeDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectDaoImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectTypeDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectTypeDaoImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoBidDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoBidDaoImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoReplyDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoReplyDaoImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/SettingsDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/SettingsDaoImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/UserDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/UserDaoImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/UserTypeDaoImplTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/UserTypeDaoImplTest.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\dao\impl\CoordinatesDAOImpl.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/CoordinatesDao.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\helper\ToStringModelBeanHelper.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/ToStringModelBeanHelper.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\logic\bots\DriverBot.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/DriverBot.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\service\impl\DBUnitDataExporterImpl.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/DBUnitDataExporter.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\service\impl\DBUnitDataLoaderImpl.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/DBUnitDataLoader.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\test\java\mdrive\business\helper\ToStringModelBeanHelperTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/util/ToStringModelBeanHelperTest.java" />
-      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\test\java\mdrive\business\helper\TranslitTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/util/TranslitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/autocompletegeo/AutoCompleteStreetBuildingPanel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/autocompletegeo/AutoCompleteStreetBuildingPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/COORDINATES.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/COORDINATES.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/COORDINATES.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/COORDINATES.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/CoordinatesBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/CoordinatesBean.java" />
+    <list default="true" id="7c9a6a01-6cb1-445d-97b1-aeec35ec2caa" name="Default" comment="PassengerBot works">
+      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\service\DBUnitDataExporter.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/DBUnitDataExporter.java" />
+      <change type="MOVED" beforePath="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\java\mdrive\business\service\DBUnitDataLoader.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/DBUnitDataLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/DBExporterTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/DBExporterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/settings/DeveloperSettingsPanel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/settings/DeveloperSettingsPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/ExcelToModelConverter.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/ExcelToModelConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/GEO_OBJECT_TYPE.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/GEO_OBJECT_TYPE.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GEO_OBJECT_TYPE.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GEO_OBJECT_TYPE.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GO_BID.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GO_BID.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GO_REPLY.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GO_REPLY.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GeoObjectBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GeoObjectBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GeoObjectTypeBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GeoObjectTypeBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GoBidBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GoBidBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/GoBidDetachableModel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/GoBidDetachableModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GoReplyBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GoReplyBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/replies/GoReplyDetachableModel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/replies/GoReplyDetachableModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/replies/GoReplySortableDataProvider.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/replies/GoReplySortableDataProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/HomePage.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/HomePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/I18NAME.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/I18NAME.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/I18NAME.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/I18NAME.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/I18NameBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/I18NameBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/config/JpaConfig.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/config/JpaConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanelDataProvider.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanelDataProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/address/selection/map/MapAddressSelectionPanel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/address/selection/map/MapAddressSelectionPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/MyLocationPanel.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/MyLocationPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/logic/bots/PassengerBotTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/logic/bots/PassengerBotTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/SettingsBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/SettingsBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/StreetsCoordinatesResolverTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/StreetsCoordinatesResolverTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/USER.csv" afterPath="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/USER.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/UserBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/UserBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/UserTypeBean.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/UserTypeBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/app/config/WebConfig.java" afterPath="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/app/config/WebConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/YMapGeneratorFromDBCoordinatesTest.java" afterPath="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/YMapGeneratorFromDBCoordinatesTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-geo/src/test/resources/map.html" afterPath="$PROJECT_DIR$/mdrive-geo/src/test/resources/map.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java" afterPath="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-business/mdrive-business.iml" afterPath="$PROJECT_DIR$/mdrive-business/mdrive-business.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-geo/mdrive-geo.iml" afterPath="$PROJECT_DIR$/mdrive-geo/mdrive-geo.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/mdrive-web.iml" afterPath="$PROJECT_DIR$/mdrive-web/mdrive-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive.iml" afterPath="$PROJECT_DIR$/mdrive.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/mojo/mojo.iml" afterPath="$PROJECT_DIR$/tools/mojo/mojo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/pom.xml" afterPath="$PROJECT_DIR$/mdrive-web/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/tools.iml" afterPath="$PROJECT_DIR$/tools/tools.iml" />
-    </list>
-    <list id="1e7f5c21-e9e1-4fb2-bb72-853df5408284" name="New changelist" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mdrive-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/mdrive-web/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="1e7f5c21-e9e1-4fb2-bb72-853df5408284" name="New changelist" comment="" />
     <ignored path="mdrive.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,21 +74,6 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java" line="177" class="mdrive.page.go.GoBidPanel.SubmitGoBidButton" package="mdrive.page.go">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="jar://$MAVEN_REPOSITORY$/org/dbunit/dbunit/2.4.8/dbunit-2.4.8-sources.jar!/org/dbunit/dataset/csv/CsvURLProducer.java" line="100" class="org.dbunit.dataset.csv.CsvURLProducer" package="org.dbunit.dataset.csv">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -334,6 +239,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java" line="43" class="mdrive.business.service.bot.PassengerBot" package="mdrive.business.service.bot">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -344,19 +264,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LiftPanelTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mdrive-web/src/test/java/mdrive/page/lift/LiftPanelTest.java">
+      <file leaf-file-name="DriverBot.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/DriverBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="576">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTypeDao.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserTypeDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="39" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="528">
+            <state line="9" column="24" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
@@ -365,7 +276,7 @@
       <file leaf-file-name="LiftPanelDataProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanelDataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="43" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="736">
+            <state line="28" column="45" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="736">
               <folding />
             </state>
           </provider>
@@ -374,52 +285,34 @@
       <file leaf-file-name="GoBidDao.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoBidDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="45" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="704">
+            <state line="34" column="5" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mdrive-business/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="21" selection-start="5693" selection-end="5693" vertical-scroll-proportion="0.0" vertical-offset="2472" max-vertical-offset="3456">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mdrive-web/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="252" column="74" selection-start="9771" selection-end="9771" vertical-scroll-proportion="0.0" vertical-offset="3261" max-vertical-offset="4224">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="49" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.8301887" vertical-offset="380" max-vertical-offset="4608">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeoObjectDao.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GeoObjectDao.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="101" selection-start="4774" selection-end="4774" vertical-scroll-proportion="0.0" vertical-offset="1114" max-vertical-offset="2064">
+            <state line="75" column="37" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.24751382" vertical-offset="768" max-vertical-offset="2080">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiftPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java">
+      <file leaf-file-name="DeveloperSettingsPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/settings/DeveloperSettingsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="35" selection-start="5640" selection-end="5640" vertical-scroll-proportion="0.0" vertical-offset="2304" max-vertical-offset="2512">
+            <state line="22" column="15" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="1584">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnOffCallable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/OnOffCallable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="5" selection-start="419" selection-end="905" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="688">
               <folding />
             </state>
           </provider>
@@ -428,7 +321,34 @@
       <file leaf-file-name="MApplication.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/app/MApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1600">
+            <state line="40" column="80" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="1600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LiftPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="144" column="40" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.0" vertical-offset="2304" max-vertical-offset="2512">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PassengerBot.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoBidPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="175" column="17" selection-start="6933" selection-end="6933" vertical-scroll-proportion="0.0" vertical-offset="2800" max-vertical-offset="3248">
               <folding />
             </state>
           </provider>
@@ -447,11 +367,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/config/JpaConfig.java" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/COORDINATES.csv" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GEO_OBJECT_TYPE.csv" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoReplyDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/SettingsDAOImplTest.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/UserTypeDAOImplTest.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/impl/DBUnitDataLoaderImpl.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoBidDAOImplTest.java" />
@@ -472,7 +387,6 @@
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GenericDAO.java" />
         <option value="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/CoordinatesDao.java" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoReplyDao.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/I18NameDao.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/SettingsDao.java" />
@@ -486,7 +400,6 @@
         <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/util/TranslitTest.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/I18NameDaoImplTest.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/I18NAME.csv" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectDaoImplTest.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoBidDaoImplTest.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GeoObjectBean.java" />
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/I18NameBean.java" />
@@ -495,9 +408,16 @@
         <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GenericDao.java" />
         <option value="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java" />
         <option value="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanelDataProvider.java" />
-        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoBidDao.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mdrive-web/pom.xml" />
+        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java" />
+        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/DBUnitDataExporter.java" />
+        <option value="$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/address/selection/map/MapAddressSelectionPanel.java" />
+        <option value="$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectDaoImplTest.java" />
+        <option value="$PROJECT_DIR$/mdrive-web/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/config/JpaConfig.java" />
+        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoBidDao.java" />
+        <option value="$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java" />
       </list>
     </option>
   </component>
@@ -640,7 +560,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -655,6 +575,449 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lift" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="go" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mdrive-business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Default">
           <PATH>
@@ -783,149 +1146,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive-business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive-business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive-business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive-business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mdrive-business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -978,11 +1198,11 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="mdrive.business.dao.impl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -993,37 +1213,16 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="mdrive.business.dao" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="mdrive.business.dao" />
-      <recent name="mdrive.business.dao.impl" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\GitHub\mdrive\mdrive-business\src\main\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="mdrive.business.util" />
+      <recent name="mdrive.business.dao" />
+      <recent name="mdrive.business.dao.impl" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in mdrive-web">
-    <configuration default="false" name="mdrive.business in mdrive-business" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mdrive-business" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mdrive.business" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Maven.Jetty.Bus.Web">
     <configuration default="false" name="All in mdrive-web" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mdrive-web" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1104,6 +1303,28 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GeoObjectDaoImplTest.getGeoObjectsByLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mdrive-business" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mdrive.business.dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="mdrive.business.dao.impl.GeoObjectDaoImplTest" />
+      <option name="METHOD_NAME" value="getGeoObjectsByLocation" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1364,19 +1585,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Maven.Jetty.Bus.Web" />
       <item index="1" class="java.lang.String" itemvalue="Maven.Jetty.Web" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.mdrive.business in mdrive-business" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in mdrive-web" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.GoBidPanelTest.testRenderMyPage" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.mdrive in mdrive-web" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.All in mdrive-business" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.All in mdrive-web" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.GoBidPanelTest.testRenderMyPage" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.mdrive in mdrive-web" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.All in mdrive-business" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.GeoObjectDaoImplTest.getGeoObjectsByLocation" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in mdrive-web" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in mdrive-business" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.mdrive in mdrive-web" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.GoBidPanelTest.testRenderMyPage" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.mdrive.business in mdrive-business" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GeoObjectDaoImplTest.getGeoObjectsByLocation" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in mdrive-web" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in mdrive-business" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.mdrive in mdrive-web" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GoBidPanelTest.testRenderMyPage" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1450,30 +1671,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1811" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5263158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5252838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7626419" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14489447" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39710444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43640125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988626" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920536" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56566703" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54084796" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6628749" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15687393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2196235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2173417" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52740437" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="26" y="201" width="1611" height="799" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23274387" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5646329" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="112" y="197" width="1611" height="799" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2523268" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4384695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1513,6 +1734,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
@@ -1523,7 +1746,8 @@
     <MESSAGE value="remove reports&#10;webtests are working" />
     <MESSAGE value="web tests working" />
     <MESSAGE value="rework" />
-    <option name="LAST_COMMIT_MESSAGE" value="rework" />
+    <MESSAGE value="PassengerBot works" />
+    <option name="LAST_COMMIT_MESSAGE" value="PassengerBot works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1533,144 +1757,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/StreetsCoordinatesResolverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="0" selection-start="2808" selection-end="2808" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="5968">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/SettingsDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="57" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="992" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GO_BID.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="43" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/ToStringModelBeanHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.19172113" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Programs/Java/jdk1.7.0_45/src.zip!/java/util/HashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="31" selection-start="4616" selection-end="4616" vertical-scroll-proportion="0.3529412" vertical-offset="1308" max-vertical-offset="4720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/I18NAME.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="997" column="20" selection-start="21533" selection-end="21534" vertical-scroll-proportion="0.0" vertical-offset="15760" max-vertical-offset="28480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/DAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="368" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/config/JpaTestConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="15" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/config/JpaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="29" selection-start="3101" selection-end="3119" vertical-scroll-proportion="0.7668845" vertical-offset="192" max-vertical-offset="1296" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoReplyDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="37" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="848" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Programs/Java/jdk1.7.0_45/src.zip!/java/beans/Transient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="18" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.78507465" vertical-offset="82" max-vertical-offset="752" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/type/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.15686275" vertical-offset="0" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/DBUnitDataLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="13" selection-start="1969" selection-end="1969" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/DBUnitDataExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/CoordinatesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="64" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectTypeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoReplyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="56" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/SettingsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="58" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/I18NameDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="56" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/Translit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="26" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="149" max-vertical-offset="1424" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/util/TranslitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="87" selection-start="443" selection-end="443" vertical-scroll-proportion="0.54176074" vertical-offset="0" max-vertical-offset="480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="50" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csv_db_export/I18NAME.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state line="556" column="10" selection-start="13526" selection-end="13526" vertical-scroll-proportion="0.3529412" vertical-offset="8572" max-vertical-offset="676448" />
@@ -1691,18 +1777,6 @@
         <state line="36156" column="31" selection-start="866138" selection-end="866155" vertical-scroll-proportion="0.0" vertical-offset="578354" max-vertical-offset="676448" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="39" selection-start="4170" selection-end="4170" vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="1808">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoBidDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="516" max-vertical-offset="1456" />
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/Index.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="11" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.45315903" vertical-offset="0" max-vertical-offset="918" />
@@ -1710,39 +1784,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GeoObjectBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="47" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
-          <folding>
-            <element signature="e#2139#2140#0" expanded="false" />
-            <element signature="e#2164#2165#0" expanded="false" />
-            <element signature="e#2199#2200#0" expanded="false" />
-            <element signature="e#2227#2228#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2430#2431#0" expanded="false" />
-            <element signature="e#2501#2502#0" expanded="false" />
-            <element signature="e#2555#2556#0" expanded="false" />
-            <element signature="e#2799#2800#0" expanded="false" />
-            <element signature="e#2839#2840#0" expanded="false" />
-            <element signature="e#2916#2917#0" expanded="false" />
-            <element signature="e#2974#2975#0" expanded="false" />
-            <element signature="e#3125#3126#0" expanded="false" />
-            <element signature="e#3161#3162#0" expanded="false" />
-            <element signature="e#3224#3225#0" expanded="false" />
-            <element signature="e#3274#3275#0" expanded="false" />
-            <element signature="e#3424#3425#0" expanded="false" />
-            <element signature="e#3466#3467#0" expanded="false" />
-            <element signature="e#3543#3544#0" expanded="false" />
-            <element signature="e#3605#3606#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="65" column="47" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/I18NameBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="7" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2192">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="15" column="7" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2192" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/logic/bots/PassengerBotTest.java">
@@ -1762,23 +1809,9 @@
         <state line="25" column="0" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="480" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2752">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/wicket/wicket-core/1.5.3/wicket-core-1.5.3-sources.jar!/org/apache/wicket/util/tester/BaseWicketTester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1283" column="0" selection-start="37986" selection-end="37986" vertical-scroll-proportion="0.0" vertical-offset="17452" max-vertical-offset="40912">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GenericDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="28" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1408">
           <folding />
         </state>
       </provider>
@@ -1797,70 +1830,214 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserTypeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="39" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="496">
-          <folding />
-        </state>
+        <state line="15" column="39" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="496" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanelDataProvider.java">
+    <entry file="file://$PROJECT_DIR$/mdrive-business/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="43" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
-          <folding />
-        </state>
+        <state line="163" column="21" selection-start="5693" selection-end="5693" vertical-scroll-proportion="0.0" vertical-offset="2472" max-vertical-offset="3456" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java">
+    <entry file="file://$PROJECT_DIR$/mdrive-web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="35" selection-start="5640" selection-end="5640" vertical-scroll-proportion="0.0" vertical-offset="1274" max-vertical-offset="2192">
-          <folding />
-        </state>
+        <state line="252" column="74" selection-start="9771" selection-end="9771" vertical-scroll-proportion="0.0" vertical-offset="3261" max-vertical-offset="4224" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="49" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="4608" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/address/selection/AddressSelectionComponent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="52" selection-start="379" selection-end="379" vertical-scroll-proportion="0.1981982" vertical-offset="0" max-vertical-offset="888" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/address/selection/AddressSelectionComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="33" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="1376" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/autocompletegeo/AutoCompleteStreetBuildingPanel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="41" selection-start="170" selection-end="170" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/autocompletegeo/AutoCompleteStreetBuildingPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="42" selection-start="4380" selection-end="4380" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GoBidDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="18" selection-start="2154" selection-end="2154" vertical-scroll-proportion="0.33333334" vertical-offset="598" max-vertical-offset="1456" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Programs/Java/jdk1.7.0_45/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="830" column="37" selection-start="30354" selection-end="30354" vertical-scroll-proportion="0.4204793" vertical-offset="12526" max-vertical-offset="18480" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Programs/Java/jdk1.7.0_45/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="16" selection-start="5750" selection-end="5750" vertical-scroll-proportion="0.33333334" vertical-offset="1710" max-vertical-offset="9328" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GEO_OBJECT_TYPE.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db/COORDINATES.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="28368" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/DBUnitDataLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="13" selection-start="1966" selection-end="1966" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/util/DBUnitDataExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="33" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/GEO_OBJECT.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="26" selection-start="116" selection-end="116" vertical-scroll-proportion="0.034858387" vertical-offset="0" max-vertical-offset="676336" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/component/address/selection/map/MapAddressSelectionPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="14" selection-start="1659" selection-end="1659" vertical-scroll-proportion="0.3222958" vertical-offset="446" max-vertical-offset="1248" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/model/GoBidBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="631" selection-end="631" vertical-scroll-proportion="0.104575165" vertical-offset="0" max-vertical-offset="1552">
+        <state line="85" column="44" selection-start="2399" selection-end="2399" vertical-scroll-proportion="0.0" vertical-offset="671" max-vertical-offset="1552">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/resources/csv_initial_db_full/COORDINATES.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="506" selection-end="506" vertical-scroll-proportion="0.104575165" vertical-offset="0" max-vertical-offset="676336" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/test/java/mdrive/business/dao/impl/GeoObjectDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="22" selection-start="4433" selection-end="4439" vertical-scroll-proportion="0.0" vertical-offset="1291" max-vertical-offset="1840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="592" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/app/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="9" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoReplyDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/config/JpaConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="26" selection-start="3277" selection-end="3277" vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="1616" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="50" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="0" selection-start="5519" selection-end="5519" vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="3856" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/DriverBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/wicket/wicket-spring/1.5.3/wicket-spring-1.5.3-sources.jar!/org/apache/wicket/spring/injection/annot/SpringBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="18" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.22657952" vertical-offset="0" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/settings/DeveloperSettingsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="15" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/OnOffCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="5" selection-start="419" selection-end="905" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/app/MApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1312">
+        <state line="40" column="80" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="1312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java">
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GenericDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="101" selection-start="4774" selection-end="4774" vertical-scroll-proportion="0.0" vertical-offset="1114" max-vertical-offset="2064">
+        <state line="45" column="19" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.33333334" vertical-offset="270" max-vertical-offset="1408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="40" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.0" vertical-offset="1274" max-vertical-offset="2192">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/lift/LiftPanelDataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="45" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-web/src/main/java/mdrive/page/go/GoBidPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="17" selection-start="6933" selection-end="6933" vertical-scroll-proportion="0.0" vertical-offset="2298" max-vertical-offset="3216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/service/bot/PassengerBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GoBidDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="45" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="576">
+        <state line="34" column="5" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-business/pom.xml">
+    <entry file="file://$PROJECT_DIR$/mdrive-business/src/main/java/mdrive/business/dao/GeoObjectDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="21" selection-start="5693" selection-end="5693" vertical-scroll-proportion="0.0" vertical-offset="2472" max-vertical-offset="3456">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mdrive-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="74" selection-start="9771" selection-end="9771" vertical-scroll-proportion="0.0" vertical-offset="3261" max-vertical-offset="4224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="49" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.8301887" vertical-offset="380" max-vertical-offset="4608">
+        <state line="75" column="37" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.24751382" vertical-offset="768" max-vertical-offset="2080">
           <folding />
         </state>
       </provider>

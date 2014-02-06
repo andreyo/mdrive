@@ -26,18 +26,18 @@ import java.util.Locale;
 @Component
 public class GeoObjectDao extends GenericDao<GeoObjectBean> {
 
-    
+
     public List<GeoObjectBean> getStreetGeoObjectsStartingWith(String prefix, int rowLimit) throws DataAccessException {
         return getStreetGeoObjectsStartingWith(prefix, Constants.DEFAULT_LOCALE, rowLimit);
     }
 
-    
+
     public List<GeoObjectBean> getStreetGeoObjectsStartingWith(String prefix, Locale locale,
                                                                int rowLimit) throws DataAccessException {
         return getGeoObjectsByTypeAndParentAndPrefix(GeoObjectTypeCode.STREET, null, prefix, locale, rowLimit);
     }
 
-    
+
     public List<GeoObjectBean> getBuildingGeoObjectsStartingWith(String prefix, Locale locale, Long parentId,
                                                                  int rowLimit) throws DataAccessException {
         if (parentId == null) {
@@ -76,12 +76,12 @@ public class GeoObjectDao extends GenericDao<GeoObjectBean> {
         return query.getResultList();
     }
 
-    
+
     public List<GeoObjectBean> getBuildingsByStreetId(Long streetId) {
         return entityManager.createNamedQuery(GeoObjectBean.GET_BUILDINGS_BY_STREET_ID).setParameter("streetId", streetId).getResultList();
     }
 
-    
+
     public Long getTotalUnresolvedBuildingsLeft() {
         return (Long) entityManager.createNamedQuery(GeoObjectBean.GET_TOTAL_UNRESOLVED_BUILDINGS_LEFT).getSingleResult();
     }
@@ -101,9 +101,22 @@ public class GeoObjectDao extends GenericDao<GeoObjectBean> {
         return geoObjectBean;
     }
 
+
+    //TODO: 3 convet Radius from Grad to Km
     @Transactional(readOnly = true)
-    public List<GeoObjectBean> getGeoObjectsByLocation(Float latitude, Float longitude, Float radius,
-                                                       GeoObjectTypeCode typeCode) throws DataAccessException {
+    public GeoObjectBean getOneGeoObjectsByLocationAndRadius(Float latitude, Float longitude, Float radius,
+                                                             GeoObjectTypeCode typeCode) throws DataAccessException {
+        List<GeoObjectBean> geoObjectsByLocationAndRadius = getGeoObjectsByLocationAndRadius(latitude, longitude, radius, typeCode, 1);
+        if (geoObjectsByLocationAndRadius == null || geoObjectsByLocationAndRadius.size() == 0) {
+            return NullGeoObjectBean.instance;
+        } else {
+            return geoObjectsByLocationAndRadius.iterator().next();
+        }
+    }
+
+    @Transactional(readOnly = true)
+    public List<GeoObjectBean> getGeoObjectsByLocationAndRadius(Float latitude, Float longitude, Float radius,
+                                                                GeoObjectTypeCode typeCode, int maxResults) throws DataAccessException {
         final Float latitudeMin = latitude - radius;
         final Float latitudeMax = latitude + radius;
         final Float longitudeMin = longitude - radius;
@@ -118,6 +131,7 @@ public class GeoObjectDao extends GenericDao<GeoObjectBean> {
                 .setParameter("longitudeMin", longitudeMin)
                 .setParameter("longitudeMax", longitudeMax)
                 .setParameter("typeCode", typeCode)
+                .setMaxResults(maxResults)
                 .getResultList();
     }
 }

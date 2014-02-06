@@ -7,7 +7,6 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,7 +32,6 @@ public class GoBidDao extends GenericDao<GoBidBean> {
      */
     @Transactional(readOnly = true)
     public List<GoBidBean> getBidsWithinGeoObjectCoordinates(GeoObjectBean searchInGeoObjectBean) throws DataAccessException {
-        List<GoBidBean> list = new ArrayList<>();
-        return list;
+        return findAll();
     }
 }

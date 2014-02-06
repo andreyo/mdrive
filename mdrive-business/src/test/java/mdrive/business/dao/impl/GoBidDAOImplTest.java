@@ -8,7 +8,7 @@ import mdrive.business.dao.UserTypeDao;
 import mdrive.business.model.GoBidBean;
 import mdrive.business.model.GoReplyBean;
 import mdrive.business.model.UserBean;
-import mdrive.business.service.DBUnitDataExporter;
+import mdrive.business.util.DBUnitDataExporter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

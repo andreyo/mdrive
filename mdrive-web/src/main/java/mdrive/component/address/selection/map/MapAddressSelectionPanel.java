@@ -48,8 +48,8 @@ public class MapAddressSelectionPanel extends FormComponentPanel<GeoObjectBean> 
         Float latitude = Float.valueOf("50.45351");
         Float longtitude = Float.valueOf("30.516489");
         Float radius = Float.valueOf(2);
-        final List<GeoObjectBean> geoObjectsList = geoObjectDao
-                .getGeoObjectsByLocation(latitude, longtitude, radius, GeoObjectTypeCode.BUILDING);
+        final GeoObjectBean geoObjectBean = geoObjectDao
+                .getOneGeoObjectsByLocationAndRadius(latitude, longtitude, radius, GeoObjectTypeCode.BUILDING);
     }
 
     @Override

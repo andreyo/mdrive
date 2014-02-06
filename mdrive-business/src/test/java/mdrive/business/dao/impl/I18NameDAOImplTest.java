@@ -3,7 +3,7 @@ package mdrive.business.dao.impl;
 import mdrive.business.config.JpaTestConfig;
 import mdrive.business.model.GeoObjectBean;
 import mdrive.business.model.I18NameBean;
-import mdrive.business.service.DBUnitDataExporter;
+import mdrive.business.util.DBUnitDataExporter;
 import mdrive.business.type.GeoObjectTypeCode;
 import mdrive.business.util.Translit;
 import org.apache.commons.lang.StringUtils;

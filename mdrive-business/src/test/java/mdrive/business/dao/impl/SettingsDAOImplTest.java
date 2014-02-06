@@ -5,7 +5,7 @@ import mdrive.business.dao.SettingsDao;
 import mdrive.business.dao.UserDao;
 import mdrive.business.model.SettingsBean;
 import mdrive.business.model.UserBean;
-import mdrive.business.service.DBUnitDataExporter;
+import mdrive.business.util.DBUnitDataExporter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
