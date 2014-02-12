@@ -1,6 +1,7 @@
 package mdrive.app;
 
 import mdrive.app.config.WebConfig;
+import mdrive.business.type.Constants;
 import mdrive.page.HomePage;
 import mdrive.page.profile.ProfilePage;
 import mdrive.page.signin.SignInPage;
@@ -80,7 +81,9 @@ public class MApplication extends AuthenticatedWebApplication {
 
     @Override
     public Session newSession(org.apache.wicket.request.Request request, org.apache.wicket.request.Response response) {
-        return new MSession(request);
+        MSession mSession = new MSession(request);
+        mSession.setLocale(Constants.LOCALE_EN);
+        return mSession;
     }
 
     @Override

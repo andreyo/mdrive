@@ -1,17 +1,25 @@
 package mdrive.business.dao;
 
 import mdrive.business.model.GeoObjectBean;
+import mdrive.business.model.GeoObjectBean_;
+import mdrive.business.model.GeoObjectTypeBean_;
+import mdrive.business.model.I18NameBean;
 import mdrive.business.model.nullobject.NullGeoObjectBean;
 import mdrive.business.type.Constants;
 import mdrive.business.type.GeoObjectTypeCode;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.WordUtils;
 import org.hibernate.Hibernate;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Query;
-import java.util.Collections;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Locale;
 
@@ -26,52 +34,51 @@ import java.util.Locale;
 @Component
 public class GeoObjectDao extends GenericDao<GeoObjectBean> {
 
-
     public List<GeoObjectBean> getStreetGeoObjectsStartingWith(String prefix, int rowLimit) throws DataAccessException {
         return getStreetGeoObjectsStartingWith(prefix, Constants.DEFAULT_LOCALE, rowLimit);
     }
 
 
-    public List<GeoObjectBean> getStreetGeoObjectsStartingWith(String prefix, Locale locale,
-                                                               int rowLimit) throws DataAccessException {
+    public List<GeoObjectBean> getStreetGeoObjectsStartingWith(String prefix, Locale locale, int rowLimit)
+            throws DataAccessException {
         return getGeoObjectsByTypeAndParentAndPrefix(GeoObjectTypeCode.STREET, null, prefix, locale, rowLimit);
     }
 
 
     public List<GeoObjectBean> getBuildingGeoObjectsStartingWith(String prefix, Locale locale, Long parentId,
                                                                  int rowLimit) throws DataAccessException {
-        if (parentId == null) {
-            return Collections.emptyList();
-        }
         return getGeoObjectsByTypeAndParentAndPrefix(GeoObjectTypeCode.BUILDING, parentId, prefix, locale, rowLimit);
     }
 
-    //TODO: create NamedQueries
     public List<GeoObjectBean> getGeoObjectsByTypeAndParentAndPrefix(GeoObjectTypeCode typeCode, Long parentId,
                                                                      String prefix, Locale locale,
                                                                      int rowLimit) throws DataAccessException {
         if (typeCode == null || prefix == null || locale == null) {
             throw new RuntimeException("typeCode, prefix or locale is null: " + typeCode + prefix + locale);
         }
-        //TODO: reuse single hql
         final String language = WordUtils.capitalize(locale.getLanguage());
-        String hql_type_prefix =
-                "from GeoObjectBean go join fetch go.objectI18Name objectName where go.geoObjectTypeBean.typeCode = :typeCode and upper(objectName.value"
-                        + language + ") like upper(:streetPrefix)";
-        String hql_type_parent_prefix =
-                "from GeoObjectBean go join fetch go.objectI18Name objectName where go.geoObjectTypeBean.typeCode = :typeCode and go.parentGeoObjectBean.id = :parentId and upper(objectName.value"
-                        + language + ") like upper(:streetPrefix)";
-        Query query;
-        if (parentId == null) {
-            query = entityManager.createQuery(hql_type_prefix)
-                    .setParameter("typeCode", typeCode)
-                    .setParameter("streetPrefix", prefix + "%");
+
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<GeoObjectBean> cq = cb.createQuery(GeoObjectBean.class);
+        Root<GeoObjectBean> root = cq.from(GeoObjectBean.class);
+
+        //predicates
+        Predicate typeCodePredicate = cb.equal(root.get(GeoObjectBean_.geoObjectTypeBean).get(GeoObjectTypeBean_.typeCode), typeCode);
+
+        Join<GeoObjectBean, I18NameBean> join = root.join(GeoObjectBean_.name);
+        Predicate prefixPredicate = cb.like(
+                cb.upper(join.<String>get("value" + language)),
+                StringUtils.upperCase(prefix + "%")
+        );
+
+        if (parentId != null) {
+            Predicate parentIdPredicate = cb.equal(root.get(GeoObjectBean_.parentGeoObjectBean).get(GeoObjectBean_.id), parentId);
+            cq.where(typeCodePredicate, prefixPredicate, parentIdPredicate);
         } else {
-            query = entityManager.createQuery(hql_type_parent_prefix)
-                    .setParameter("typeCode", typeCode)
-                    .setParameter("parentId", parentId)
-                    .setParameter("streetPrefix", prefix + "%");
+            cq.where(typeCodePredicate, prefixPredicate);
         }
+
+        TypedQuery<GeoObjectBean> query = entityManager.createQuery(cq);
         query.setMaxResults(rowLimit);
         return query.getResultList();
     }
@@ -93,7 +100,7 @@ public class GeoObjectDao extends GenericDao<GeoObjectBean> {
         }
         GeoObjectBean geoObjectBean = findOne(id);
         if (geoObjectBean != null) {
-            Hibernate.initialize(geoObjectBean.getObjectI18Name());
+            Hibernate.initialize(geoObjectBean.getName());
             Hibernate.initialize(geoObjectBean.getParentGeoObjectBean());
             Hibernate.initialize(geoObjectBean.getCoordinatesBean());
             Hibernate.initialize(geoObjectBean.getGeoObjectTypeBean());

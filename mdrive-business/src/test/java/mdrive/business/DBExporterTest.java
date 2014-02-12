@@ -52,7 +52,7 @@ public class DBExporterTest {
         CoordinatesBean coordinatesBean = new CoordinatesBean();
         coordinatesBean.setGeoObjectBean(geoObjectBean);
         geoObjectBean.setCoordinatesBean(coordinatesBean);
-        geoObjectBean.setObjectI18Name(new I18NameBean("new_street", "новая_улица", "nova_vulitsa"));
+        geoObjectBean.setName(new I18NameBean("new_street", "новая_улица", "nova_vulitsa"));
         geoObjectBean.setParentGeoObjectBean(null);
         geoObjectDao.persist(geoObjectBean);
     }

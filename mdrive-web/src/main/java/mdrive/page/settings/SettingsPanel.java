@@ -51,8 +51,10 @@ public abstract class SettingsPanel extends Panel {
             }
 
             @Override
-            public void setObject(Locale object) {
-                MSession.get().setLocale(object);
+            public void setObject(Locale locale) {
+                if (locale != null) {
+                    MSession.get().setLocale(locale);
+                }
             }
         }, Constants.LOCALES);
         localeDropDownChoice.add(new AjaxFormComponentUpdatingBehavior("onchange") {

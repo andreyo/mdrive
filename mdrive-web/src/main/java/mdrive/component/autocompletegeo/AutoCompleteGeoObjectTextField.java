@@ -21,6 +21,6 @@ public abstract class AutoCompleteGeoObjectTextField extends AutoCompleteObjectT
 
     @Override
     public String getTextValue(GeoObjectBean object) {
-        return object.getObjectI18Name().getValue(getLocale());
+        return object.getName().getValue(getLocale());
     }
 }

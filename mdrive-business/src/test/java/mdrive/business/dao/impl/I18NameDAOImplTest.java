@@ -41,7 +41,7 @@ public class I18NameDaoImplTest {
     @Rollback(false)
     public void setEnglishColumnsFromUkrainian() throws Exception {
         String geoObjectsWithEmptyNames =
-                "from GeoObjectBean go join fetch go.objectI18Name objectName where go.geoObjectTypeBean.typeCode in (:typeCode1, :typeCode2) and length(objectName.valueEn) = 0";
+                "from GeoObjectBean go join fetch go.name objectName where go.geoObjectTypeBean.typeCode in (:typeCode1, :typeCode2) and length(objectName.valueEn) = 0";
         Query query = entityManager.createQuery(geoObjectsWithEmptyNames, GeoObjectBean.class)
                 .setParameter("typeCode1", GeoObjectTypeCode.STREET)
                 .setParameter("typeCode2", GeoObjectTypeCode.BUILDING);
@@ -50,7 +50,7 @@ public class I18NameDaoImplTest {
         List<GeoObjectBean> resultList;
         while ((resultList = query.getResultList()).size() > 0) {
             for (GeoObjectBean geoObjectBean : resultList) {
-                I18NameBean nameBean = geoObjectBean.getObjectI18Name();
+                I18NameBean nameBean = geoObjectBean.getName();
                 String valueEn = Translit.translitRusUkr2En(nameBean.getValueUk());
                 if (StringUtils.isBlank(valueEn)) {
                     valueEn = "0_";

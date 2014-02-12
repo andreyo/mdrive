@@ -37,7 +37,7 @@ public class UserTypeDaoImplTest {
     @Test
     public void findAll() {
         for (UserTypeBean userTypeBean : userTypeDao.findAll()) {
-            System.out.println("typeName = " + userTypeBean.getTypeI18Name().getValue());
+            System.out.println("typeName = " + userTypeBean.getName().getValue());
             System.out.println(userTypeBean);
         }
     }
@@ -47,7 +47,7 @@ public class UserTypeDaoImplTest {
         I18NameBean i18NameBean = new I18NameBean("egnlish name", "русское имя", "украинское имя");
         i18NameDao.persist(i18NameBean);
         UserTypeBean userTypeBean = new UserTypeBean();
-        userTypeBean.setTypeI18Name(i18NameBean);
+        userTypeBean.setName(i18NameBean);
         userTypeDao.persist(userTypeBean);
         UserTypeBean retrievedUserTypeBean = userTypeDao.findOne(userTypeBean.getId());
         assertEquals(userTypeBean, retrievedUserTypeBean);

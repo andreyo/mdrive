@@ -15,7 +15,7 @@ public class GeoObjectTypeBean implements ModelBean {
 
     private Long id;
     private GeoObjectTypeCode typeCode;
-    private I18NameBean typeI18Name;
+    private I18NameBean name;
 
     public GeoObjectTypeBean() {
     }
@@ -42,12 +42,12 @@ public class GeoObjectTypeBean implements ModelBean {
     @OneToOne
     @JoinColumn(name = "i18name_id", nullable = false)
     @ForeignKey(name = "FK_I18NAME")
-    public I18NameBean getTypeI18Name() {
-        return typeI18Name;
+    public I18NameBean getName() {
+        return name;
     }
 
-    public void setTypeI18Name(I18NameBean typeI18Name) {
-        this.typeI18Name = typeI18Name;
+    public void setName(I18NameBean name) {
+        this.name = name;
     }
 
     @Override

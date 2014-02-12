@@ -92,14 +92,14 @@ public class StreetsCoordinatesResolverTest {
         //Get Next Street To Work On
         Long streetId = getNextStreetId();
         GeoObjectBean streetBean = geoObjectDao.findOne(streetId);
-        String streetNameUk = streetBean.getObjectI18Name().getValue(Constants.LOCALE_UK);
+        String streetNameUk = streetBean.getName().getValue(Constants.LOCALE_UK);
         //write to log at the beginning, to prevent infinite loop on error
         writeDBLog(streetBean.getId(), "start", "start", 0L, 0L, Translit.translitRusUkr2En(streetNameUk));
         //Get Buildings Of That Street
         List<GeoObjectBean> buildingBeans = geoObjectDao.getBuildingsByStreetId(streetBean.getId());
         try {
             for (GeoObjectBean buildingBean : buildingBeans) {
-                String buildingNameUk = buildingBean.getObjectI18Name().getValue(Constants.LOCALE_UK);
+                String buildingNameUk = buildingBean.getName().getValue(Constants.LOCALE_UK);
                 log.debug(CITY_UK + ", " + streetNameUk + ", " + buildingNameUk);
                 //Resolve Coordinates Of Building
                 if (true == resolveBuildingCoordinates(buildingBean, CITY_UK, streetNameUk, buildingNameUk)) {
@@ -253,7 +253,7 @@ public class StreetsCoordinatesResolverTest {
         // search in DB first
         GeoObjectBean cityAreaGO = new GeoObjectBean();
         cityAreaGO.setGeoObjectTypeBean(cityAreaGeoObjectTypeBean);
-        cityAreaGO.setObjectI18Name(new I18NameBean(Translit.translitRusUkr2En(cityAreaName), "", cityAreaName));
+        cityAreaGO.setName(new I18NameBean(Translit.translitRusUkr2En(cityAreaName), "", cityAreaName));
         List<GeoObjectBean> cityAreasList = geoObjectDao
                 .getGeoObjectsByTypeAndParentAndPrefix(GeoObjectTypeCode.CITY_AREA,
                         null,

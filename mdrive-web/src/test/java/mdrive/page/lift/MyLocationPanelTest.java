@@ -24,7 +24,7 @@ public class MyLocationPanelTest {
     @Test
     public void testPanel() throws Exception {
         tester.startComponentInPage(MyLocationPanel.class);
-        tester.assertContains("Не определено");
+        tester.assertContains("Unknown");
         tester.clickLink(MyLocationPanel.LOCATION_LINK_ID);
         tester.assertComponent(MyLocationPanel.LOCATION_SELECTION_PANEL_ID, WebMarkupContainer.class);
         System.out.println(tester.getLastResponseAsString());

@@ -125,7 +125,7 @@ public class ExcelToModelConverter {
         CoordinatesBean coordinatesBean = new CoordinatesBean();
         coordinatesBean.setGeoObjectBean(streetGO);
         streetGO.setCoordinatesBean(coordinatesBean);
-        streetGO.setObjectI18Name(new I18NameBean("", "", streetName));
+        streetGO.setName(new I18NameBean("", "", streetName));
         //parent for street will be set later
         streetGO.setParentGeoObjectBean(null);
         return streetGO;
@@ -149,7 +149,7 @@ public class ExcelToModelConverter {
         CoordinatesBean coordinatesBean = new CoordinatesBean();
         coordinatesBean.setGeoObjectBean(buildingGO);
         buildingGO.setCoordinatesBean(coordinatesBean);
-        buildingGO.setObjectI18Name(new I18NameBean("", "", buildingName));
+        buildingGO.setName(new I18NameBean("", "", buildingName));
         //parent for building is street
         buildingGO.setParentGeoObjectBean(streetGeoObject);
         return buildingGO;

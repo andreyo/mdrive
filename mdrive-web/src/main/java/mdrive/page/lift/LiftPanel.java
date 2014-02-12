@@ -121,9 +121,9 @@ public class LiftPanel extends BreadCrumbPanel {
 
         private String getFromAddressLabel(GoBidBean goBidBean) {
             try {
-                String streetName = goBidBean.getFromGeoObjectBean().getParentGeoObjectBean().getObjectI18Name()
+                String streetName = goBidBean.getFromGeoObjectBean().getParentGeoObjectBean().getName()
                         .getValue(getLocale());
-                String buildingName = goBidBean.getFromGeoObjectBean().getObjectI18Name().getValue(getLocale());
+                String buildingName = goBidBean.getFromGeoObjectBean().getName().getValue(getLocale());
                 return streetName + " " + buildingName;
             } catch (Exception e) {
                 return "error";
@@ -132,9 +132,9 @@ public class LiftPanel extends BreadCrumbPanel {
 
         private String getToAddressLabel(GoBidBean goBidBean) {
             try {
-                String streetName = goBidBean.getToGeoObjectBean().getParentGeoObjectBean().getObjectI18Name()
+                String streetName = goBidBean.getToGeoObjectBean().getParentGeoObjectBean().getName()
                         .getValue(getLocale());
-                String buildingName = goBidBean.getToGeoObjectBean().getObjectI18Name().getValue(getLocale());
+                String buildingName = goBidBean.getToGeoObjectBean().getName().getValue(getLocale());
                 return streetName + " " + buildingName;
             } catch (Exception e) {
                 return "error";

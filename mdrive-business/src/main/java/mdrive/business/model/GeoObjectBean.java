@@ -39,7 +39,7 @@ public class GeoObjectBean implements ModelBean {
     private Long id;
     private CoordinatesBean coordinatesBean;
     private GeoObjectTypeBean geoObjectTypeBean;
-    private I18NameBean objectI18Name;
+    private I18NameBean name;
     private GeoObjectBean parentGeoObjectBean;
 
     public GeoObjectBean() {
@@ -83,12 +83,12 @@ public class GeoObjectBean implements ModelBean {
     @OneToOne
     @JoinColumn(name = "i18name_id", nullable = false)
     @ForeignKey(name = "FK_I18NAME")
-    public I18NameBean getObjectI18Name() {
-        return objectI18Name;
+    public I18NameBean getName() {
+        return name;
     }
 
-    public void setObjectI18Name(I18NameBean objectI18Name) {
-        this.objectI18Name = objectI18Name;
+    public void setName(I18NameBean name) {
+        this.name = name;
     }
 
     @OneToOne

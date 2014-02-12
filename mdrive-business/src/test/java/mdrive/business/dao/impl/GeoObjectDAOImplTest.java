@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -37,6 +39,9 @@ public class GeoObjectDaoImplTest {
     @Autowired
     private GeoObjectDao geoObjectDao;
 
+    @PersistenceContext
+    EntityManager entityManager;
+
     @Test
     public void getStreetsStartingWith() throws Exception {
         final String PREFIX = "K";
@@ -46,11 +51,11 @@ public class GeoObjectDaoImplTest {
 
     @Test
     public void getStreetsStartingWithPrefix_andLocale() throws Exception {
-        final String PREFIX = "Толстого Льва ул.";
+        final String PREFIX = "Тол";
         List<GeoObjectBean> resultList = geoObjectDao.getStreetGeoObjectsStartingWith(PREFIX, Constants.LOCALE_RU, 10);
         assertEquals(1, resultList.size());
         for (GeoObjectBean geoObjectBean : resultList) {
-            String value = geoObjectBean.getObjectI18Name().getValue(Constants.LOCALE_RU);
+            String value = geoObjectBean.getName().getValue(Constants.LOCALE_RU);
             assertNotNull(value);
             assertTrue(value.startsWith(PREFIX));
             log.info(geoObjectBean);

@@ -28,7 +28,7 @@ public class NullGeoObjectBean extends GeoObjectBean {
     }
 
     @Override
-    public I18NameBean getObjectI18Name() {
+    public I18NameBean getName() {
         return NullI18NameBean.instance;
     }
 

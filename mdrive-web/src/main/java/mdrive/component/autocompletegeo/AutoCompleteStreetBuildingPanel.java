@@ -58,7 +58,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
                     return;
                 }
                 buildingAutoCompleteGeoObjectTextField
-                        .setSearchText(buildingGeoObject.getObjectI18Name().getValue(getLocale()));
+                        .setSearchText(buildingGeoObject.getName().getValue(getLocale()));
                 buildingAutoCompleteGeoObjectTextField.setSelectedObjectId(newBuildingId);
                 //if building has another street - change it as well
                 Long newStreetId = buildingGeoObject.getParentGeoObjectBean().getId();
@@ -70,7 +70,7 @@ public class AutoCompleteStreetBuildingPanel extends FormComponentPanel<Long> {
                         return;
                     }
                     streetAutoCompleteGeoObjectTextField
-                            .setSearchText(streetGeoObject.getObjectI18Name().getValue(getLocale()));
+                            .setSearchText(streetGeoObject.getName().getValue(getLocale()));
                     streetAutoCompleteGeoObjectTextField.setSelectedObjectId(newStreetId);
                 }
             }

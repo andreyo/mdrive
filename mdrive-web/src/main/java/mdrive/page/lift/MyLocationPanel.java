@@ -91,11 +91,11 @@ public class MyLocationPanel extends FormComponentPanel {
     public String getCurrentLocationLinkLabel() {
         GeoObjectBean streetBean = geoObjectDao
                 .getFullGeoObjectBeanById(MSession.get().getUserLocationStreetId());
-        String streetName = streetBean.getObjectI18Name().getValue();
+        String streetName = streetBean.getName().getValue();
 
         GeoObjectBean buildingBean = geoObjectDao
                 .getFullGeoObjectBeanById(MSession.get().getUserLocationBuildingId());
-        String buildingName = buildingBean.getObjectI18Name().getValue();
+        String buildingName = buildingBean.getName().getValue();
 
         if (streetName == null && buildingName == null) {
             return getString(LOCATION_UNKNOWN_PROPERTY);
