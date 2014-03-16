@@ -7,7 +7,7 @@
 *.ear
 
 # Project Files #
-*.iml
+**/*.iml
 .idea/
 
 # Logs #

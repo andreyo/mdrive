@@ -15,7 +15,6 @@
         <module>mdrive-business</module>
         <module>mdrive-geo</module>
         <module>mdrive-web</module>
-        <module>tools</module>
     </modules>
     <build>
         <plugins>
