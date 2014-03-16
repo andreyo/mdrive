@@ -3,6 +3,10 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/mdrive-web" />
+  </component>
+  <component name="IdProvider" IDEtalkID="639DBFF5F08EB657F1E8104C86CC482B" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

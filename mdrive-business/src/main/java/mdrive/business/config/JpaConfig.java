@@ -1,8 +1,8 @@
 package mdrive.business.config;
 
 import mdrive.business.config.properties.JpaProperties;
-import mdrive.business.service.bot.DriverBot;
-import mdrive.business.service.bot.PassengerBot;
+import mdrive.business.bot.DriverBot;
+import mdrive.business.bot.PassengerBot;
 import mdrive.business.util.DBUnitDataExporter;
 import mdrive.business.util.DBUnitDataLoader;
 import org.springframework.beans.factory.annotation.Autowired;

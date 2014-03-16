@@ -18,7 +18,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -97,6 +100,15 @@ public class GoBidDaoImplTest {
         entityManager.flush();
 
         dbUnitDataExporter.exportTables("");
+    }
+
+    @Test
+    public void query() throws Exception {
+        String hql = "from GoBidBean goBid inner join goBid.goReplies reply where goBid.userBean.id = 3 and reply.userBean.id in (3,4)";
+        List resultList = entityManager.createQuery(hql).getResultList();
+        for (Object o : resultList) {
+            System.out.println(o);
+        }
     }
 
     @Test

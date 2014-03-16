@@ -1,4 +1,4 @@
-package mdrive.business.service.bot;
+package mdrive.business.bot;
 
 import mdrive.business.dao.GeoObjectDao;
 import mdrive.business.dao.GoBidDao;

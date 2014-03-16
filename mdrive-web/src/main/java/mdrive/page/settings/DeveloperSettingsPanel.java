@@ -1,6 +1,6 @@
 package mdrive.page.settings;
 
-import mdrive.business.service.bot.PassengerBot;
+import mdrive.business.bot.PassengerBot;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
 import org.apache.wicket.markup.html.basic.Label;

@@ -1,4 +1,4 @@
-package mdrive.business.service.bot;
+package mdrive.business.bot;
 
 /**
  * Created by IntelliJ IDEA.

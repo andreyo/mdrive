@@ -142,6 +142,31 @@
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.glassfish.embedded</groupId>
+                <artifactId>maven-embedded-glassfish-plugin</artifactId>
+                <version>${embedded-glassfish.version}</version>
+                <configuration>
+                    <app>target/${project.artifactId}-${project.version}</app>
+                    <ports>
+                        <http-listener>8282</http-listener>
+                        <https-listener>8383</https-listener>
+                    </ports>
+                    <contextRoot>${project.artifactId}</contextRoot>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.glassfish.main.common</groupId>
+                        <artifactId>simple-glassfish-api</artifactId>
+                        <version>${glassfish.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.glassfish.main.extras</groupId>
+                        <artifactId>glassfish-embedded-all</artifactId>
+                        <version>${glassfish.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -192,7 +217,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${org.springframework.version}</version>
         </dependency>
 
         <!-- OAuth -->
@@ -255,5 +279,7 @@
         <jetty.version>6.1.4</jetty.version>
         <org.hsqldb.version>1.8.0.10</org.hsqldb.version>
         <war.file.name>${project.artifactId}-${project.version}</war.file.name>
+        <embedded-glassfish.version>3.1.2.2</embedded-glassfish.version>
+        <glassfish.version>4.0</glassfish.version>
     </properties>
 </project>

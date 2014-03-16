@@ -1,7 +1,7 @@
 package mdrive.business.logic.bots;
 
 import mdrive.business.config.JpaTestConfig;
-import mdrive.business.service.bot.PassengerBot;
+import mdrive.business.bot.PassengerBot;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
